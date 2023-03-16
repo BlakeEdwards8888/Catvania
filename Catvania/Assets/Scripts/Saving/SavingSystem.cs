@@ -18,11 +18,6 @@ namespace Cat.Saving
             playerTransform = GameObject.FindWithTag("Player").transform;
         }
 
-        private void Start()
-        {
-            //StartCoroutine(LoadLastScene("save1"));
-        }
-
         public IEnumerator LoadLastScene(string saveFile)
         {
             Dictionary<string, object> state = LoadFile(saveFile);
@@ -77,24 +72,15 @@ namespace Cat.Saving
 
         private void CaptureState(Dictionary<string, object> state)
         {
-            //foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
-            //{
-            //    state[saveable.GetUniqueIdentifier()] = saveable.CaptureState();
-            //}
-
             state["lastSceneBuildIndex"] = SceneManager.GetActiveScene().buildIndex;
+            state["flagData"] = Resources.Load<FlagSystem>("Default Flag System").CaptureState();
+            state["playerData"] = playerTransform.GetComponent<SaveableEntity>().CaptureState();
         }
 
         private void RestoreState(Dictionary<string, object> state)
         {
-            //foreach (SaveableEntity saveable in FindObjectsOfType<SaveableEntity>())
-            //{
-            //    string id = saveable.GetUniqueIdentifier();
-            //    if (state.ContainsKey(id))
-            //    {
-            //        saveable.RestoreState(state[id]);
-            //    }
-            //}
+            Resources.Load<FlagSystem>("Default Flag System").RestoreState(state["flagData"]);
+            playerTransform.GetComponent<SaveableEntity>().RestoreState(state["playerData"]);
         }
 
         private string GetPathFromSaveFile(string saveFile)

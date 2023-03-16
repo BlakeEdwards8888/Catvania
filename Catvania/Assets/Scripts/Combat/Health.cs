@@ -1,3 +1,4 @@
+using Cat.Saving;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace Cat.Combat
 {
-    public class Health : MonoBehaviour
+    public class Health : MonoBehaviour, ISaveable
     {
         [SerializeField] int maxHealth;
 
@@ -51,6 +52,16 @@ namespace Cat.Combat
         public int GetCurrentHealth()
         {
             return currentHealth;
+        }
+
+        public object CaptureState()
+        {
+            return maxHealth;
+        }
+
+        public void RestoreState(object state)
+        {
+            maxHealth = (int)state;
         }
     }
 }

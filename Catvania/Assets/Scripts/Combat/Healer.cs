@@ -1,4 +1,5 @@
 using Cat.Controls;
+using Cat.Saving;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 namespace Cat.Combat
 {
-    public class Healer : MonoBehaviour
+    public class Healer : MonoBehaviour, ISaveable
     {
         [SerializeField] int healCount;
         [SerializeField] int healAmount;
@@ -57,6 +58,16 @@ namespace Cat.Combat
         {
             healsRemaining = healCount;
             healEvent?.Invoke();
+        }
+
+        public object CaptureState()
+        {
+            return healCount;
+        }
+
+        public void RestoreState(object state)
+        {
+            healCount = (int)state;
         }
     }
 }

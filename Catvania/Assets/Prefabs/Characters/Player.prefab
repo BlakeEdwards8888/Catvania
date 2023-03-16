@@ -5572,6 +5572,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowTimeScale: 0.2
   slowDownDuration: 0.2
+--- !u!114 &1410764614215826577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761550992353619629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4819b67afc08d4886c54af8c30e0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3761550992353619630 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896896, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
