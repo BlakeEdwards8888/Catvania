@@ -52,5 +52,11 @@ namespace Cat.Combat
         {
             return healsRemaining;
         }
+
+        public void RestoreAllHeals()
+        {
+            healsRemaining = healCount;
+            healEvent?.Invoke();
+        }
     }
 }

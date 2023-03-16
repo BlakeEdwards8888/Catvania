@@ -38,10 +38,6 @@ namespace Cat.SceneManagement
             playerTransform.position = otherPortal.GetSpawnPostion();
             playerTransform.localScale = otherPortal.GetSpawnScale();
 
-            CinemachineVirtualCamera playerVCam = FindObjectOfType<CinemachineVirtualCamera>();
-
-            playerVCam.m_Follow = playerTransform;
-
             Destroy(gameObject);
         }
 
