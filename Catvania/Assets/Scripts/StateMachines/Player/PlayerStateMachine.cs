@@ -34,6 +34,10 @@ namespace Cat.StateMachines.Player
         [field: SerializeField] public TrailRenderer DashTrail { get; private set; }
         [field: SerializeField] public ParticleSystem DashParticles { get; private set; }
         [field: SerializeField] public FlagSystem FlagSystem { get; private set; }
+        [field: SerializeField] public Health Health { get; private set; }
+        [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
+
+        [SerializeField] float invulnerabilityDuration = 1;
 
         Dictionary<string, Attack> attackLookup = null;
 
@@ -78,6 +82,21 @@ namespace Cat.StateMachines.Player
             {
                 attackLookup.Add(attack.attackName, attack.attack);
             }
+        }
+
+        public IEnumerator<object> InvulnerabilityCoroutine()
+        {
+            Color spriteColorCache = SpriteRenderer.color;
+
+            spriteColorCache.a = 0.5f;
+            SpriteRenderer.color = spriteColorCache;
+
+            yield return new WaitForSeconds(invulnerabilityDuration);
+
+            spriteColorCache.a = 1;
+            SpriteRenderer.color = spriteColorCache;
+
+            Health.SetIsInvulnerable(false);
         }
 
         public void SetCanDoubleJump(bool value)

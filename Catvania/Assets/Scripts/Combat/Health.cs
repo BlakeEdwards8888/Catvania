@@ -11,6 +11,7 @@ namespace Cat.Combat
         [SerializeField] int maxHealth;
 
         int currentHealth;
+        bool isInvulnerable;
 
         public event Action<float> onTakeDamage;
         public event Action onDeath;
@@ -54,6 +55,11 @@ namespace Cat.Combat
             return currentHealth;
         }
 
+        public bool IsInvulnerable()
+        {
+            return isInvulnerable;
+        }
+
         public object CaptureState()
         {
             return maxHealth;
@@ -62,6 +68,11 @@ namespace Cat.Combat
         public void RestoreState(object state)
         {
             maxHealth = (int)state;
+        }
+
+        public void SetIsInvulnerable(bool value)
+        {
+            isInvulnerable = value;
         }
     }
 }

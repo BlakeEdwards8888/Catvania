@@ -26,6 +26,8 @@ namespace Cat.Combat
 
             if (other.TryGetComponent(out Health health))
             {
+                if (health.IsInvulnerable()) return;
+
                 health.TakeDamage(damage, hitstunDuration);
             }
 

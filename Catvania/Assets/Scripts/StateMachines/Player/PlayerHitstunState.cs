@@ -19,6 +19,7 @@ namespace Cat.StateMachines.Player
         public override void Enter()
         {
             stateMachine.Animator.Play(HitstunHash);
+            stateMachine.Health.SetIsInvulnerable(true);
         }
 
         public override void Tick(float deltaTime)
@@ -35,6 +36,9 @@ namespace Cat.StateMachines.Player
             }
         }
 
-        public override void Exit() {}
+        public override void Exit() 
+        {
+            stateMachine.StartCoroutine(stateMachine.InvulnerabilityCoroutine());
+        }
     }
 }

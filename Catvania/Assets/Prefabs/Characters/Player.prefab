@@ -5415,6 +5415,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5707958506339184862, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_PrefabInstance: {fileID: 8864501020778423214}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &3761550992316945265 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 8864501020778423214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3761550992316945270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707958506339184856, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -5532,6 +5537,9 @@ MonoBehaviour:
   <DashTrail>k__BackingField: {fileID: 3889132711412210486}
   <DashParticles>k__BackingField: {fileID: 5477710330232048081}
   <FlagSystem>k__BackingField: {fileID: 11400000, guid: f9584667a13f51a41825165bba1ade4c, type: 2}
+  <Health>k__BackingField: {fileID: 5227319915245858614}
+  <SpriteRenderer>k__BackingField: {fileID: 3761550992316945265}
+  invulnerabilityDuration: 1
 --- !u!114 &-2107304446574144727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5558,6 +5566,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healCount: 3
   healAmount: 30
+--- !u!114 &1410764614215826577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761550992353619629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4819b67afc08d4886c54af8c30e0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4497620833597792766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,18 +5592,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowTimeScale: 0.2
   slowDownDuration: 0.2
---- !u!114 &1410764614215826577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3761550992353619629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf4819b67afc08d4886c54af8c30e0a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &3761550992353619630 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896896, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -5598,5 +5606,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 289af13db585fb14ab9d0a1c85c06b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5227319915245858614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3714945715782814872, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 8864501020778423214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761550992353619629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44674af7ae03f9f48bfa1564fce51a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
