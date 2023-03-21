@@ -36,6 +36,7 @@ namespace Cat.StateMachines.Player
         [field: SerializeField] public FlagSystem FlagSystem { get; private set; }
         [field: SerializeField] public Health Health { get; private set; }
         [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
+        [field: SerializeField] public Healer Healer { get; private set; }
 
         [SerializeField] float invulnerabilityDuration = 1;
 

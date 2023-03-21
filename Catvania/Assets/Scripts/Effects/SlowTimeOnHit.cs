@@ -38,7 +38,7 @@ namespace Cat.Effects
 
         private void OnDisable()
         {
-            GetComponent<Health>().onTakeDamage += Slow;
+            GetComponent<Health>().onTakeDamage -= Slow;
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Cat.StateMachines.Player
             stateMachine.InputReader.jumpEvent += OnJump;
             stateMachine.InputReader.attackEvent += OnAttack;
             stateMachine.InputReader.specialEvent += OnSpecial;
+            stateMachine.InputReader.healEvent += OnHeal;
 
             stateMachine.Animator.Play(IdleHash);
         }
@@ -42,6 +43,7 @@ namespace Cat.StateMachines.Player
             stateMachine.InputReader.jumpEvent -= OnJump;
             stateMachine.InputReader.attackEvent -= OnAttack;
             stateMachine.InputReader.specialEvent -= OnSpecial;
+            stateMachine.InputReader.healEvent += OnHeal;
         }
 
         private void OnJump()

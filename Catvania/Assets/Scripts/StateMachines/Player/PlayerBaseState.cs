@@ -144,6 +144,13 @@ namespace Cat.StateMachines.Player
             }
         }
 
+        protected void OnHeal()
+        {
+            if (!stateMachine.Healer.CanHeal()) return;
+
+            stateMachine.SwitchState(new PlayerHealState(stateMachine));
+        }
+
         protected void TryDoubleJump()
         {
             if (stateMachine.CanDoubleJump())

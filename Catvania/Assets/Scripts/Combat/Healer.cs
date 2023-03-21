@@ -18,7 +18,7 @@ namespace Cat.Combat
 
         private void OnEnable()
         {
-            GetComponent<InputReader>().healEvent += OnHeal;
+            //GetComponent<InputReader>().healEvent += OnHeal;
         }
 
         private void Awake()
@@ -26,11 +26,9 @@ namespace Cat.Combat
             healsRemaining = healCount;
         }
 
-        void OnHeal()
+        public void Heal()
         {
             Health health = GetComponent<Health>();
-
-            if (healsRemaining == 0 || health.GetMaxHealth() == health.GetCurrentHealth() || health.GetCurrentHealth() == 0) return;
 
             health.Heal(healAmount);
 
@@ -39,9 +37,14 @@ namespace Cat.Combat
             healEvent?.Invoke();
         }
 
-        private void OnDisable()
+        public bool CanHeal()
         {
-            GetComponent<InputReader>().healEvent -= OnHeal;
+            Health health = GetComponent<Health>();
+
+            if (healsRemaining == 0 || health.GetMaxHealth() == health.GetCurrentHealth() 
+                || health.GetCurrentHealth() == 0) return false;
+
+            return true;
         }
 
         public int GetHealCount()
@@ -68,6 +71,11 @@ namespace Cat.Combat
         public void RestoreState(object state)
         {
             healCount = (int)state;
+        }
+
+        private void OnDisable()
+        {
+            //GetComponent<InputReader>().healEvent -= OnHeal;
         }
     }
 }
