@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: catguy-Heal
+  m_Name: Projectile
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,19 +20,17 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 998696461, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
+      value: {fileID: -781833004, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
     - time: 0.1
-      value: {fileID: 1407212322, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
+      value: {fileID: 686224459, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
+    - time: 0.2
+      value: {fileID: 675648119, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
     - time: 0.3
-      value: {fileID: 389912907, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
+      value: {fileID: -1583960868, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
     - time: 0.4
-      value: {fileID: 287263391, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - time: 0.5
-      value: {fileID: 1799566853, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - time: 0.6
-      value: {fileID: 1799566853, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
+      value: {fileID: -1583960868, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Sprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -43,25 +41,24 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 850496168
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 998696461, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - {fileID: 1407212322, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - {fileID: 389912907, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - {fileID: 287263391, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - {fileID: 1799566853, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
-    - {fileID: 1799566853, guid: ae60b88a29b625b4fb90942a86172bd9, type: 3}
+    - {fileID: -781833004, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
+    - {fileID: 686224459, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
+    - {fileID: 675648119, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
+    - {fileID: -1583960868, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
+    - {fileID: -1583960868, guid: 9d76041ba69c14a48a502d8682d6e15e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6166667
+    m_StopTime: 0.4166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -80,18 +77,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.3
-    functionName: Heal
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.3
-    functionName: PlayParticleEffect
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

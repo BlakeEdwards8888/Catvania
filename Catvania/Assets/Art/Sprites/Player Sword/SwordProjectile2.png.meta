@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae60b88a29b625b4fb90942a86172bd9
+guid: 9d76041ba69c14a48a502d8682d6e15e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,106 +140,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: catguy-Heal_0
+      name: SwordProjectile2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9acb9c24b84f32546ac648d0d2d9a4ff
-      internalID: 998696461
+      spriteID: aa144c2e37209c240bc0d4f4d9e4ebca
+      internalID: -781833004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catguy-Heal_1
+      name: SwordProjectile2_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9876b4907bb2e449147286045fe7cb
+      internalID: 686224459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SwordProjectile2_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fddece1321379c44a3535af5120a3bc
-      internalID: 1407212322
+      spriteID: 93341348d0e411f47bf1b9aa40a41dea
+      internalID: 675648119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catguy-Heal_2
+      name: SwordProjectile2_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bab10a67af5f6f45ab6cb141da33bb1
-      internalID: 389912907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catguy-Heal_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc18943fc6705245be0db90e78f054d
-      internalID: 287263391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catguy-Heal_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38a5efd0c5d0f8944b8f2ec9a09fdd8a
-      internalID: 1799566853
+      spriteID: 3c1edb0d0f040794a8353eae177281bf
+      internalID: -1583960868
       vertices: []
       indices: 
       edges: []
@@ -255,11 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      catguy-Heal_4: 1799566853
-      catguy-Heal_3: 287263391
-      catguy-Heal_0: 998696461
-      catguy-Heal_2: 389912907
-      catguy-Heal_1: 1407212322
+      SwordProjectile2_1: 686224459
+      SwordProjectile2_3: -1583960868
+      SwordProjectile2_0: -781833004
+      SwordProjectile2_2: 675648119
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

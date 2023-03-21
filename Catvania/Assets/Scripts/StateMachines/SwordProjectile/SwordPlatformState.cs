@@ -7,6 +7,8 @@ namespace Cat.StateMachines.Sword
 {
     public class SwordPlatformState : SwordBaseState
     {
+        readonly int PlatformHash = Animator.StringToHash("Platform");
+
         public SwordPlatformState(SwordStateMachine stateMachine) : base(stateMachine) {}
 
         public override void Enter()
@@ -19,6 +21,7 @@ namespace Cat.StateMachines.Sword
             stateMachine.HitEffect.Play();
             stateMachine.transform.position += CalculateOffset();
             stateMachine.InputReader.specialEvent += ReturnToPlayer;
+            stateMachine.Animator.Play(PlatformHash);
         }
 
         public override void Tick(float deltaTime)

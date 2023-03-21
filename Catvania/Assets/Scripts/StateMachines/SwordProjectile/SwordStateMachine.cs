@@ -19,6 +19,8 @@ namespace Cat.StateMachines.Sword
         [field: SerializeField] public InputReader InputReader { get; private set; }
         [field: SerializeField] public ParticleSystem HitEffect { get; private set; }
         [field: SerializeField] public Collider2D HitboxCollider { get; private set; }
+        [field: SerializeField] public Animator Animator { get; private set; }
+        [field: SerializeField] public Transform EntryPoint { get; private set; }
 
         private void Start()
         {
