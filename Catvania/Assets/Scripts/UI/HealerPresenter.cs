@@ -8,12 +8,19 @@ namespace Cat.UI
 {
     public class HealerPresenter : MonoBehaviour
     {
-        [SerializeField] Healer healer;
         [SerializeField] FlaskUI flaskUIPrefab;
+
+        Healer healer;
 
         private void OnEnable()
         {
             healer.healEvent += UpdateHeals;
+        }
+
+        private void Awake()
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            healer = player.GetComponent<Healer>();
         }
 
         private void Start()

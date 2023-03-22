@@ -10,10 +10,10 @@ namespace Cat.UI
     {
         private const float FillSmoothTime = 0.1f;
 
-        [SerializeField] Health health;
         [SerializeField] Slider healthBar;
         [SerializeField] float borderWidth;
 
+        Health health;
         float targetValue;
 
         float fillVelocity;
@@ -21,6 +21,12 @@ namespace Cat.UI
         private void OnEnable()
         {
             health.onHealthChanged += UpdateHealthBar;
+        }
+
+        private void Awake()
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            health = player.GetComponent<Health>();
         }
 
         private void Start()
