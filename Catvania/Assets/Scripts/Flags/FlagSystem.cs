@@ -18,6 +18,11 @@ namespace Cat.Flags
         {
             if (flagLookup == null) BuildLookup();
 
+            if (!flagLookup.ContainsKey(flagID))
+            {
+                flagLookup[flagID] = false;
+            }
+
             return flagLookup[flagID];
         }
 

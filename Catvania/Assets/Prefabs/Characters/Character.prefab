@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5707958506339184863}
-  flashHoldTime: 0.15
-  flashDuration: 0.1
+  defaultFlashHoldTime: 0.15
+  defaultFlashDuration: 0.1
 --- !u!1 &5707958506339184857
 GameObject:
   m_ObjectHideFlags: 0

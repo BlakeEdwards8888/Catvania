@@ -21,6 +21,7 @@ namespace Cat.UI
         private void OnEnable()
         {
             health.onHealthChanged += UpdateHealthBar;
+            health.onMaxHealthChanged += UpdateHealthBarInstantly;
         }
 
         private void Awake()
@@ -66,6 +67,7 @@ namespace Cat.UI
         private void OnDisable()
         {
             health.onHealthChanged -= UpdateHealthBar;
+            health.onMaxHealthChanged -= UpdateHealthBarInstantly;
         }
     }
 }

@@ -1,14 +1,15 @@
+using Cat.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Cat.Combat
+namespace Cat.Effects
 {
-    public class DamageFlasher : MonoBehaviour
+    public class SpriteFlasher: MonoBehaviour
     {
         [SerializeField] SpriteRenderer spriteRenderer;
-        [SerializeField] float flashHoldTime = 0.1f;
-        [SerializeField] float flashDuration = 0.1f;
+        [SerializeField] float defaultFlashHoldTime = 0.1f;
+        [SerializeField] float defaultFlashDuration = 0.1f;
 
         Coroutine currentCoroutine = null;
 
@@ -17,6 +18,16 @@ namespace Cat.Combat
             GetComponent<Health>().onTakeDamage += Flash;
         }
 
+        public void Flash(float flashHoldTime, float flashDuration)
+        {
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+            }
+
+            currentCoroutine = StartCoroutine(FlashCoroutine(flashHoldTime, flashDuration));
+    }
+
         void Flash(float f)
         {
             if(currentCoroutine != null)
@@ -24,10 +35,10 @@ namespace Cat.Combat
                 StopCoroutine(currentCoroutine);
             }
 
-            currentCoroutine = StartCoroutine(FlashCoroutine());
+            currentCoroutine = StartCoroutine(FlashCoroutine(defaultFlashHoldTime, defaultFlashDuration));
         }
 
-        IEnumerator FlashCoroutine()
+        IEnumerator FlashCoroutine(float flashHoldTime, float flashDuration)
         {
             float fade = 1;
 

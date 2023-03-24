@@ -14,8 +14,10 @@ namespace Cat.Combat
         bool isInvulnerable;
 
         public event Action<float> onTakeDamage;
+       
         public event Action onDeath;
         public event Action onHealthChanged;
+        public event Action onMaxHealthChanged;
 
         private void Awake()
         {
@@ -43,6 +45,13 @@ namespace Cat.Combat
             currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
 
             onHealthChanged?.Invoke();
+        }
+
+        public void AddMaxHealth(int healthIncrease)
+        {
+            maxHealth += healthIncrease;
+            onMaxHealthChanged?.Invoke();
+            Heal(maxHealth);
         }
 
         public int GetMaxHealth()
