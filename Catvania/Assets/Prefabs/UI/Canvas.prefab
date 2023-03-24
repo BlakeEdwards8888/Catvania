@@ -124,6 +124,7 @@ RectTransform:
   m_Children:
   - {fileID: 6120707948679965371}
   - {fileID: 8195768158804001390}
+  - {fileID: 7411266917915974818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -307,6 +308,42 @@ RectTransform:
   m_AnchoredPosition: {x: -120.00003, y: 98.24755}
   m_SizeDelta: {x: -240, y: -196.4951}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2116558695284694338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7411266917915974818}
+  m_Layer: 5
+  m_Name: Pause Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7411266917915974818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116558695284694338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5731377150528380737}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2169833015278319436
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a65f94d05e37e429c5d577ee20a1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healer: {fileID: 0}
   flaskUIPrefab: {fileID: 7355156144342528686, guid: 96c801999fd89c446a99cd3d3318a7ba, type: 3}
 --- !u!1 &2512706676311956793
 GameObject:
@@ -624,7 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4dbf05797dc6c742bcb079a5bf76760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
   healthBar: {fileID: 7106240684393957856}
   borderWidth: 2
 --- !u!1 &8647864622380012838

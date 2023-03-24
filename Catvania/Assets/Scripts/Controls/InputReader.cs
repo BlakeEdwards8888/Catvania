@@ -17,13 +17,20 @@ namespace Cat.Controls
         public event Action attackEvent;
         public event Action specialEvent;
         public event Action healEvent;
+        public event Action pauseEvent;
 
         void Start()
         {
             controls = new Controls();
+
             controls.Player.SetCallbacks(this);
 
             controls.Player.Enable();
+        }
+
+        public Controls GetControls()
+        {
+            return controls;
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -61,6 +68,13 @@ namespace Cat.Controls
             if (!context.performed) return;
 
             healEvent?.Invoke();
+        }
+
+        public void OnPause(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+
+            pauseEvent?.Invoke();
         }
     }
 }

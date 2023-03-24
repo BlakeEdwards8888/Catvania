@@ -73,6 +73,15 @@ namespace Cat.Controls
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""85e78dbd-39bf-4ca6-947d-117a8012fd88"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -383,6 +392,28 @@ namespace Cat.Controls
                     ""action"": ""Heal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""472855b8-b1c3-46b4-88b5-491055a9d440"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""758fe6e7-0319-49d3-a8ea-22727f64136a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -419,6 +450,7 @@ namespace Cat.Controls
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_Special = m_Player.FindAction("Special", throwIfNotFound: true);
             m_Player_Heal = m_Player.FindAction("Heal", throwIfNotFound: true);
+            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -483,6 +515,7 @@ namespace Cat.Controls
         private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_Special;
         private readonly InputAction m_Player_Heal;
+        private readonly InputAction m_Player_Pause;
         public struct PlayerActions
         {
             private @Controls m_Wrapper;
@@ -492,6 +525,7 @@ namespace Cat.Controls
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @Special => m_Wrapper.m_Player_Special;
             public InputAction @Heal => m_Wrapper.m_Player_Heal;
+            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -516,6 +550,9 @@ namespace Cat.Controls
                     @Heal.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
                     @Heal.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
                     @Heal.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeal;
+                    @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -535,6 +572,9 @@ namespace Cat.Controls
                     @Heal.started += instance.OnHeal;
                     @Heal.performed += instance.OnHeal;
                     @Heal.canceled += instance.OnHeal;
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -564,6 +604,7 @@ namespace Cat.Controls
             void OnAttack(InputAction.CallbackContext context);
             void OnSpecial(InputAction.CallbackContext context);
             void OnHeal(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }
