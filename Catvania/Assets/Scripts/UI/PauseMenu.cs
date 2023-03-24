@@ -15,7 +15,7 @@ namespace Cat.UI
             GetComponent<InputReader>().pauseEvent += ToggleUI;
         }
 
-        private void ToggleUI()
+        public void ToggleUI()
         {
             pausePanel.SetActive(!pausePanel.activeInHierarchy);
         }
