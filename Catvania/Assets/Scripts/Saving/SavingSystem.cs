@@ -11,11 +11,21 @@ namespace Cat.Saving
 {
     public class SavingSystem : MonoBehaviour
     {
+        public static SavingSystem Instance;
+
         Transform playerTransform;
 
         private void Awake()
         {
-            playerTransform = GameObject.FindWithTag("Player").transform;
+            if(Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public IEnumerator LoadLastScene(string saveFile)
@@ -26,7 +36,10 @@ namespace Cat.Saving
             {
                 buildIndex = (int)state["lastSceneBuildIndex"];
             }
+
             yield return SceneManager.LoadSceneAsync(buildIndex);
+
+            playerTransform = GameObject.FindWithTag("Player").transform;
 
             playerTransform.position = FindObjectOfType<SavePoint>().transform.position;
 
