@@ -47,7 +47,7 @@ namespace Cat.Saving
 
         void Save()
         {
-            FindObjectOfType<SavingSystem>().Save("save1");
+            FindObjectOfType<SavingSystem>().Save();
         }
 
         private void OnDrawGizmos()

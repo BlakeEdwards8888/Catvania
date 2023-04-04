@@ -11,9 +11,12 @@ namespace Cat.Saving
 {
     public class SavingSystem : MonoBehaviour
     {
+        const int DEFAULT_LAST_SCENE = 1;
+
         public static SavingSystem Instance;
 
         Transform playerTransform;
+        string currentSaveFile;
 
         private void Awake()
         {
@@ -30,8 +33,12 @@ namespace Cat.Saving
 
         public IEnumerator LoadLastScene(string saveFile)
         {
+            currentSaveFile = saveFile;
+
             Dictionary<string, object> state = LoadFile(saveFile);
-            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+
+            int buildIndex = DEFAULT_LAST_SCENE;
+
             if (state.ContainsKey("lastSceneBuildIndex"))
             {
                 buildIndex = (int)state["lastSceneBuildIndex"];
@@ -41,21 +48,29 @@ namespace Cat.Saving
 
             playerTransform = GameObject.FindWithTag("Player").transform;
 
-            playerTransform.position = FindObjectOfType<SavePoint>().transform.position;
+            if (state.ContainsKey("lastSceneBuildIndex"))
+            {
+                playerTransform.position = FindObjectOfType<SavePoint>().transform.position;
+            }
 
             RestoreState(state);
         }
 
-        public void Save(string saveFile)
+        public void Save()
         {
-            Dictionary<string, object> state = LoadFile(saveFile);
+            Dictionary<string, object> state = LoadFile(currentSaveFile);
             CaptureState(state);
-            SaveFile(saveFile, state);
+            SaveFile(currentSaveFile, state);
         }
 
         public void Load(string saveFile)
         {
             RestoreState(LoadFile(saveFile));
+        }
+
+        public void Delete(string saveFile)
+        {
+            File.Delete(GetPathFromSaveFile(saveFile));
         }
 
         private Dictionary<string, object> LoadFile(string saveFile)
@@ -92,7 +107,10 @@ namespace Cat.Saving
 
         private void RestoreState(Dictionary<string, object> state)
         {
+            if(state.ContainsKey("flagData"))
             Resources.Load<FlagSystem>("Default Flag System").RestoreState(state["flagData"]);
+
+            if(state.ContainsKey("playerData"))
             playerTransform.GetComponent<SaveableEntity>().RestoreState(state["playerData"]);
         }
 

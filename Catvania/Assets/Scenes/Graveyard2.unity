@@ -35051,6 +35051,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8794076276861230941, guid: 39610e3fc604ced4bbffd9732b9252bd, type: 3}
+      propertyPath: sceneToLoad
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794076276861230941, guid: 39610e3fc604ced4bbffd9732b9252bd, type: 3}
       propertyPath: playerSpawnScale.x
       value: 1
       objectReference: {fileID: 0}

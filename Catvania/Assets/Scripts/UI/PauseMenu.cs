@@ -1,28 +1,25 @@
 using Cat.Controls;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cat.UI
 {
     public class PauseMenu : MonoBehaviour
     {
-        [SerializeField] GameObject pausePanel;
+        [SerializeField] UIToggler uiToggler;
 
         private void OnEnable()
         {
-            GetComponent<InputReader>().pauseEvent += ToggleUI;
+            GetComponent<InputReader>().pauseEvent += InputReader_PauseEvent;
         }
 
-        public void ToggleUI()
+        private void InputReader_PauseEvent()
         {
-            pausePanel.SetActive(!pausePanel.activeInHierarchy);
+            uiToggler.ToggleUI();
         }
 
         private void OnDisable()
         {
-            GetComponent<InputReader>().pauseEvent -= ToggleUI;
+            GetComponent<InputReader>().pauseEvent -= InputReader_PauseEvent;
         }
     }
 }

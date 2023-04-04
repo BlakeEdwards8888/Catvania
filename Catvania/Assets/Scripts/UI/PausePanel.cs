@@ -6,8 +6,6 @@ namespace Cat.UI
 {
     public class PausePanel : MonoBehaviour
     {
-        [SerializeField] GameObject firstButton;
-
         InputReader playerInputReader;
 
         private void Awake()
@@ -18,7 +16,6 @@ namespace Cat.UI
 
         private void OnEnable()
         {
-            EventSystem.current.SetSelectedGameObject(firstButton);
             Time.timeScale = 0;
             playerInputReader.GetControls().Disable();
         }
