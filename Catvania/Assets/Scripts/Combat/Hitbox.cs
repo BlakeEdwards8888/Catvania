@@ -12,6 +12,7 @@ namespace Cat.Combat
         [SerializeField] Vector2 knockback;
         [SerializeField] float hitstunDuration;
         [SerializeField] GameObject hitEffect;
+        [Tooltip("Indicates which entitites this hitbox does NOT hit")]
         [SerializeField] string targetFilter;
 
         Vector2 directionToCollision;

@@ -42,6 +42,12 @@ namespace Cat.Physics
             AddForce(new Vector2(x, y));
         }
 
+        //This is to be used in animation events
+        public void AddHorizontalForce(float x)
+        {
+            AddForce(x * transform.localScale.x, 0);
+        }
+
         public Vector2 GetForce()
         {
             return force;
