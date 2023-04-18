@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1cf6018d64da944aad19182170765ea
-      internalID: -612338448
+      spriteID: 434142ba1dd779244bca0c79d700e4ca
+      internalID: -760750084
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4839d49d312e94b4fa3ab428c84a4eca
-      internalID: -373015864
+      spriteID: 4a84e2ca12b4c4e428e888442685ac82
+      internalID: -1878118219
       vertices: []
       indices: 
       edges: []
@@ -196,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4416a2482a5ebf547b4ca21bd929c713
-      internalID: -1282964920
+      spriteID: 928b562c1a34f084a8c674c63e0417b2
+      internalID: 1102454709
       vertices: []
       indices: 
       edges: []
@@ -217,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d2227ee16c79964d9a3db1f05c09dbf
-      internalID: 1490505271
+      spriteID: f75c023be44968f4f90d85d4720314a1
+      internalID: -1421800983
       vertices: []
       indices: 
       edges: []
@@ -238,8 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b321077d837bb45a569d684b79acb1
-      internalID: -38910916
+      spriteID: d6ed08905a184f34eb33cee34dd639f5
+      internalID: -647915570
       vertices: []
       indices: 
       edges: []
@@ -259,8 +259,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5479fdb9a3963549ac4a25fcd7339f0
-      internalID: -1162487815
+      spriteID: dd44956cb42819f4489442c3927c4ee3
+      internalID: 1496930911
       vertices: []
       indices: 
       edges: []
@@ -280,8 +280,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d1cc6b945f28d94e9fe6b8f8741f20f
-      internalID: -1317587104
+      spriteID: 4161c8d2d2cd78147a07d51a2011f866
+      internalID: -1741756280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redcrusader-flurry_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162efcaf31275ff42acbdf6b39dc20ed
+      internalID: 1831498087
       vertices: []
       indices: 
       edges: []
@@ -297,13 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      redcrusader-flurry_6: -1317587104
-      redcrusader-flurry_5: -1162487815
-      redcrusader-flurry_0: -612338448
-      redcrusader-flurry_1: -373015864
-      redcrusader-flurry_4: -38910916
-      redcrusader-flurry_3: 1490505271
-      redcrusader-flurry_2: -1282964920
+      redcrusader-flurry_6: -1741756280
+      redcrusader-flurry_5: 1496930911
+      redcrusader-flurry_7: 1831498087
+      redcrusader-flurry_0: -760750084
+      redcrusader-flurry_1: -1878118219
+      redcrusader-flurry_4: -647915570
+      redcrusader-flurry_3: -1421800983
+      redcrusader-flurry_2: 1102454709
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

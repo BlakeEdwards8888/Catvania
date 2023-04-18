@@ -147,15 +147,15 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10e91511445124548bb2aa0e4eb81d25
-      internalID: -1069867571
+      spriteID: ac9e1096dfae5ca488e65fef7492f331
+      internalID: -1081580872
       vertices: []
       indices: 
       edges: []
@@ -168,15 +168,15 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08967146f68184c4586709cb4ef990d0
-      internalID: 209535498
+      spriteID: 13c0f2ab04a956e4286d0ba9cafb0ae9
+      internalID: -539473933
       vertices: []
       indices: 
       edges: []
@@ -189,15 +189,78 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e1fc3f73c98ad845b244d9f0f99c032
-      internalID: -2111457219
+      spriteID: 841b219742df3de498d4449d2bb7f64f
+      internalID: 1063181731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redcrusader-DownStrike_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5782e3294fc2bc345bbf6018d54ef7e5
+      internalID: -995594695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redcrusader-DownStrike_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3e182468ff7c048bc8551b226746c4
+      internalID: 1285728913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redcrusader-DownStrike_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017ea24178e3f24498f83c6804680a8c
+      internalID: 907743674
       vertices: []
       indices: 
       edges: []
@@ -213,9 +276,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      redcrusader-DownStrike_2: -2111457219
-      redcrusader-DownStrike_1: 209535498
-      redcrusader-DownStrike_0: -1069867571
+      redcrusader-DownStrike_2: 1063181731
+      redcrusader-DownStrike_5: 907743674
+      redcrusader-DownStrike_1: -539473933
+      redcrusader-DownStrike_0: -1081580872
+      redcrusader-DownStrike_4: 1285728913
+      redcrusader-DownStrike_3: -995594695
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

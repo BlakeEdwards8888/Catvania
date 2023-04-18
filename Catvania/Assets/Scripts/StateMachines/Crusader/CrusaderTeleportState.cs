@@ -40,7 +40,7 @@ namespace Cat.StateMachines.Crusader
 
         private void InitiateNextState()
         {
-            stateMachine.SwitchState(new CrusaderFlurryState(stateMachine));
+            stateMachine.SwitchState(new CrusaderDownwardStrikeState(stateMachine));
         }
     }
 }

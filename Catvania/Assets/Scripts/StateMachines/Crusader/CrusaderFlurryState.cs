@@ -45,15 +45,15 @@ namespace Cat.StateMachines.Crusader
 
         private void TrySpawn(Transform playerTransform, float xOffset)
         {
-            Vector2 tempPosition = new Vector2(playerTransform.position.x + xOffset, 0.6f);
+            Vector2 tempPosition = new Vector2(playerTransform.position.x + xOffset, 0.6f); //0.6 is the y origin so that the 1x1 wall check is slightly off the ground
 
-            if (Physics2D.BoxCast(tempPosition, new Vector2(1, 1), 0, Vector2.up, 0.1f, stateMachine.GroundFilter))
+            if (Physics2D.BoxCast(tempPosition, new Vector2(1, 1), 0, Vector2.up, 0.1f, stateMachine.GroundLayerMask))
             {
                 TrySpawn(playerTransform, xOffset * -1);
                 return;
             }
 
-            tempPosition.y = 0;
+            tempPosition.y = 0; //reset the y to zero because we want to spawn on the ground
 
             stateMachine.transform.position = tempPosition;
         }

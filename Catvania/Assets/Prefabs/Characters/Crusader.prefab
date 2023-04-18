@@ -68,8 +68,20 @@ PrefabInstance:
       value: 0.51885796
       objectReference: {fileID: 0}
     - target: {fileID: 5707958506310896903, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707958506310896903, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: m_Offset.x
       value: 0.020386696
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: m_Sprite
@@ -105,7 +117,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9b1864715f6edab40ac3c434f66093d2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -129,10 +141,28 @@ MonoBehaviour:
   <BodyCollider>k__BackingField: {fileID: 8545167892006052422}
   <TeleportationDuration>k__BackingField: 0.5
   <Rb2d>k__BackingField: {fileID: 8545167892006052417}
-  <GroundFilter>k__BackingField:
+  <GroundLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
+  <GroundContactFilter>k__BackingField:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
   <Animator>k__BackingField: {fileID: 2701889705570965698}
+  <DownwardStrikeHeight>k__BackingField: 4
+  <DownwardStrikeSpeed>k__BackingField: 15
+  <DownwardStrikeCooldown>k__BackingField: 0.5
+  <Mover>k__BackingField: {fileID: 8545167892006052423}
 --- !u!4 &8545167892006052419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707958506310896898, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -143,6 +173,17 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896903, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_PrefabInstance: {fileID: 4152379228983963457}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8545167892006052423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5707958506310896902, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b84b4fc3fba1848a3ccc7a052827b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &8545167892042784670 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
