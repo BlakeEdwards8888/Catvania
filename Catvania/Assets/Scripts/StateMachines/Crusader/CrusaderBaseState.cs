@@ -31,5 +31,16 @@ namespace Cat.StateMachines.Crusader
 
             return false;
         }
+
+        protected void FacePlayer()
+        {
+            Transform playerTransform = GameObject.FindWithTag("Player").transform;
+
+            float xScale = playerTransform.position.x < stateMachine.transform.position.x ? -1 : 1;
+
+            Vector3 tempScale = new Vector3(xScale, stateMachine.transform.localScale.y, stateMachine.transform.localScale.z);
+
+            stateMachine.transform.localScale = tempScale;
+        }
     }
 }

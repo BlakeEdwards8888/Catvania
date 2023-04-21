@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <SwordThrowWaitTime>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <LeftSwordThrowSpawnPoint>k__BackingField
+      value: 
+      objectReference: {fileID: 1043973750}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <RightSwordThrowSpawnPoint>k__BackingField
+      value: 
+      objectReference: {fileID: 1755652871}
     - target: {fileID: 8545167892006052418, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: m_Name
       value: Crusader
@@ -208,6 +220,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+--- !u!1 &1043973749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043973750}
+  m_Layer: 0
+  m_Name: Sword Throw Spawn Point L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043973750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043973749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: -0.043276124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1406209761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16528,6 +16571,37 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 20860985394106052, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+--- !u!1 &1755652870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755652871}
+  m_Layer: 0
+  m_Name: Sword Throw Spawn Point R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755652871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755652870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15, y: 0, z: -0.043276124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960506338
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cat.StateMachines.Crusader
@@ -40,7 +37,7 @@ namespace Cat.StateMachines.Crusader
 
         private void InitiateNextState()
         {
-            stateMachine.SwitchState(new CrusaderDownwardStrikeState(stateMachine));
+            stateMachine.SwitchState(stateMachine.GetNextAttackState());
         }
     }
 }

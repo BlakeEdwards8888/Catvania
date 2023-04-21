@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1170775055465232686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65174354412954494}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &65174354412954494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170775055465232686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.288, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8545167892006052419}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4152379228983963457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -124,6 +155,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3930821654077087838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938caef184aab7e44bdd03448f1777fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2833570226654957180, guid: f54929deced0626428a3e0c72cb415c9, type: 3}
+  firePoint: {fileID: 65174354412954494}
+  force: {x: 10, y: 0}
 --- !u!114 &6421512802562971842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +209,10 @@ MonoBehaviour:
   <DownwardStrikeSpeed>k__BackingField: 15
   <DownwardStrikeCooldown>k__BackingField: 0.5
   <Mover>k__BackingField: {fileID: 8545167892006052423}
+  <LeftSwordThrowSpawnPoint>k__BackingField: {fileID: 0}
+  <RightSwordThrowSpawnPoint>k__BackingField: {fileID: 0}
+  <SwordThrowWaitTime>k__BackingField: 1
+  attackPattern: 00000000000000000000000001000000010000000100000002000000
 --- !u!4 &8545167892006052419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707958506310896898, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}

@@ -24,7 +24,6 @@ namespace Cat.StateMachines.Sword
 
         public override void Tick(float deltaTime)
         {
-
             stateMachine.Rb2d.velocity = CalculateDirectionToPlayer() * stateMachine.ReturnMoveSpeed;
 
             if(Vector2.Distance(playerTransform.position + PlayerPositionOffset, stateMachine.transform.position) <= StoppingDistance)
