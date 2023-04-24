@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace Cat.StateMachines.Crusader
 {
     public class CrusaderTeleportState : CrusaderBaseState
     {
-        readonly int IdleHash = Animator.StringToHash("Idle");
+        readonly int TeleportOutHash = Animator.StringToHash("TeleportOut");
 
         float timeSinceTeleported = 0;
 
@@ -12,8 +13,7 @@ namespace Cat.StateMachines.Crusader
 
         public override void Enter() 
         {
-            stateMachine.Animator.Play(IdleHash);
-            stateMachine.SpriteRenderer.enabled = false;
+            stateMachine.Animator.Play(TeleportOutHash);
             stateMachine.BodyHitbox.gameObject.SetActive(false);
             stateMachine.BodyCollider.enabled = false;
         }
@@ -24,18 +24,17 @@ namespace Cat.StateMachines.Crusader
 
             if(timeSinceTeleported >= stateMachine.TeleportationDuration)
             {
-                InitiateNextState();
+                InitiateNestState();
             }
         }
 
         public override void Exit() 
         {
-            stateMachine.SpriteRenderer.enabled = true;
             stateMachine.BodyHitbox.gameObject.SetActive(true);
             stateMachine.BodyCollider.enabled = true;
         }
 
-        private void InitiateNextState()
+        private void InitiateNestState()
         {
             stateMachine.SwitchState(stateMachine.GetNextAttackState());
         }

@@ -12,8 +12,8 @@ namespace Cat.UI
 
         [SerializeField] Slider healthBar;
         [SerializeField] float borderWidth;
+        [SerializeField] Health health;
 
-        Health health;
         float targetValue;
 
         float fillVelocity;
@@ -26,8 +26,13 @@ namespace Cat.UI
 
         private void Awake()
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            health = player.GetComponent<Health>();
+            //If the health component is not set manually, that means this is the player
+            //health bar, so we'll set it ourselves
+            if (health == null)
+            {
+                GameObject player = GameObject.FindWithTag("Player");
+                health = player.GetComponent<Health>();
+            }
         }
 
         private void Start()

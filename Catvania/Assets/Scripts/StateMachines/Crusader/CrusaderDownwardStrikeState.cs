@@ -10,18 +10,33 @@ namespace Cat.StateMachines.Crusader
 
         public CrusaderDownwardStrikeState(CrusaderStateMachine stateMachine) : base(stateMachine) {}
 
-        public override void Enter()
-        {
-            stateMachine.Animator.Play(DownwardStrikeHash);
+        bool teleportedIn = false;
 
+        public override void Enter()
+        {            
             Transform playerTransform = GameObject.FindWithTag("Player").transform;
 
             stateMachine.transform.position = new Vector3(playerTransform.position.x,
                 stateMachine.DownwardStrikeHeight, 0);
+
+            stateMachine.Animator.Play(TeleportInFromBelowHash);
         }
 
         public override void Tick(float deltaTime)
         {
+            if (!teleportedIn)
+            {
+                AnimatorStateInfo anim = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
+
+                if (anim.IsTag("TeleportIn") && anim.normalizedTime >= 1)
+                {
+                    stateMachine.Animator.Play(DownwardStrikeHash);
+                    teleportedIn = true;
+                }
+
+                return;
+            }
+
             Move(stateMachine.DownwardStrikeSpeed, Vector2.down);
 
             if (IsGrounded())

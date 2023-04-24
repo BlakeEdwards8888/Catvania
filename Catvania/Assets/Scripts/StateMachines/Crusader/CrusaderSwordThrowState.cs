@@ -10,6 +10,7 @@ namespace Cat.StateMachines.Crusader
         readonly int SwordThrowHash = Animator.StringToHash("SwordThrow-Enter");
 
         float timeSinceThrown = 0;
+        bool teleportedIn = false;
 
         public CrusaderSwordThrowState(CrusaderStateMachine stateMachine) : base(stateMachine) {}
 
@@ -17,11 +18,24 @@ namespace Cat.StateMachines.Crusader
         {
             SpawnAtRandomSpawnPoint();
             FacePlayer();
-            stateMachine.Animator.Play(SwordThrowHash);
+            stateMachine.Animator.Play(TeleportInFromAboveHash);
         }
 
         public override void Tick(float deltaTime)
         {
+            if (!teleportedIn)
+            {
+                AnimatorStateInfo anim = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
+
+                if (anim.IsTag("TeleportIn") && anim.normalizedTime >= 1)
+                {
+                    stateMachine.Animator.Play(SwordThrowHash);
+                    teleportedIn = true;
+                }
+
+                return;
+            }
+
             timeSinceThrown += deltaTime;
 
             if(timeSinceThrown >= stateMachine.SwordThrowWaitTime)

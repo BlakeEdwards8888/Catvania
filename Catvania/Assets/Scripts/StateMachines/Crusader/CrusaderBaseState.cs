@@ -6,6 +6,9 @@ namespace Cat.StateMachines.Crusader
 {
     public abstract class CrusaderBaseState : State
     {
+        protected readonly int TeleportInFromAboveHash = Animator.StringToHash("TeleportInFromAbove");
+        protected readonly int TeleportInFromBelowHash = Animator.StringToHash("TeleportInFromBelow");
+
         private const float GroundCheckDistance = 0.1f;
 
         protected CrusaderStateMachine stateMachine;
