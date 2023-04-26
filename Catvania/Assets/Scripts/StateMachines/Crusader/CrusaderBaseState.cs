@@ -23,6 +23,17 @@ namespace Cat.StateMachines.Crusader
             stateMachine.Mover.Move(direction * speed);
         }
 
+        protected void Move()
+        {
+            stateMachine.Mover.Move(CalculateMovement(0, Vector2.up) + stateMachine.ForceHandler.GetForce());
+        }
+
+        private Vector2 CalculateMovement(float speed, Vector2 direction)
+        {
+            Vector2 gravity = new Vector2(0, stateMachine.Rb2d.velocity.y);
+            return (direction * speed) + gravity;
+        }
+
         protected bool IsGrounded()
         {
             RaycastHit2D[] results = new RaycastHit2D[1];

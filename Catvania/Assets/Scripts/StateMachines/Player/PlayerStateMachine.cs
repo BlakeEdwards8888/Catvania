@@ -1,5 +1,6 @@
 using Cat.Combat;
 using Cat.Controls;
+using Cat.Effects;
 using Cat.Flags;
 using Cat.Movement;
 using Cat.Physics;
@@ -37,8 +38,11 @@ namespace Cat.StateMachines.Player
         [field: SerializeField] public Health Health { get; private set; }
         [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
         [field: SerializeField] public Healer Healer { get; private set; }
+        [field: SerializeField] public TimeManipulator TimeManipulator { get; private set; }
 
         [SerializeField] float invulnerabilityDuration = 1;
+        [SerializeField] float hitTimeScale = 0.2f;
+        [SerializeField] float hitTimeManipulationDuration = 0.2f;
 
         Dictionary<string, Attack> attackLookup = null;
 
@@ -49,7 +53,7 @@ namespace Cat.StateMachines.Player
 
         private void OnEnable()
         {
-            GetComponent<Health>().onTakeDamage += EnterHitstun;
+            GetComponent<Health>().onTakeDamage += Health_OnTakeDamage;
             GetComponent<Health>().onDeath += OnDeath;
         }
 
@@ -58,8 +62,9 @@ namespace Cat.StateMachines.Player
             SwitchState(new PlayerFreeMoveState(this));
         }
 
-        private void EnterHitstun(float duration)
+        private void Health_OnTakeDamage(float duration)
         {
+            TimeManipulator.StartManipulatingTime(hitTimeScale, hitTimeManipulationDuration);
             SwitchState(new PlayerHitstunState(this, duration));
         }
 
@@ -132,7 +137,7 @@ namespace Cat.StateMachines.Player
 
         private void OnDisable()
         {
-            GetComponent<Health>().onTakeDamage -= EnterHitstun;
+            GetComponent<Health>().onTakeDamage -= Health_OnTakeDamage;
             GetComponent<Health>().onDeath -= OnDeath;
         }
     }

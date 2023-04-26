@@ -125,6 +125,28 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5707958506339184862, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+--- !u!114 &733547543452230617 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3714945715782814872, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44674af7ae03f9f48bfa1564fce51a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3051872801772295667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1439560665657047730, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53941a3f6702de349ae6b33f159f3363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8545167892006052417 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896896, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -170,6 +192,18 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2833570226654957180, guid: f54929deced0626428a3e0c72cb415c9, type: 3}
   firePoint: {fileID: 65174354412954494}
   force: {x: 10, y: 0}
+--- !u!114 &6142236376106737600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485c9e010eaae1e4aae8e44933a94a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6421512802562971842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +246,10 @@ MonoBehaviour:
   <LeftSwordThrowSpawnPoint>k__BackingField: {fileID: 0}
   <RightSwordThrowSpawnPoint>k__BackingField: {fileID: 0}
   <SwordThrowWaitTime>k__BackingField: 1
+  <Health>k__BackingField: {fileID: 733547543452230617}
+  <ForceHandler>k__BackingField: {fileID: 8885245791437522526}
+  <SpriteFlasher>k__BackingField: {fileID: 3051872801772295667}
+  <TimeManipulator>k__BackingField: {fileID: 6142236376106737600}
   attackPattern: 00000000000000000000000001000000010000000100000002000000
 --- !u!4 &8545167892006052419 stripped
 Transform:
@@ -239,6 +277,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5707958506339184863, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_PrefabInstance: {fileID: 4152379228983963457}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8885245791437522526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4822947351639861535, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289af13db585fb14ab9d0a1c85c06b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6271825783152025678
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,5 +1,8 @@
 using Cat.Combat;
+using Cat.Effects;
 using Cat.Movement;
+using Cat.Physics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,10 +33,19 @@ namespace Cat.StateMachines.Crusader
         [field: SerializeField] public Transform LeftSwordThrowSpawnPoint { get; private set; }
         [field: SerializeField] public Transform RightSwordThrowSpawnPoint { get; private set; }
         [field: SerializeField] public float SwordThrowWaitTime { get; private set; }
+        [field: SerializeField] public Health Health { get; private set; }
+        [field: SerializeField] public ForceHandler ForceHandler { get; private set; }
+        [field: SerializeField] public SpriteFlasher SpriteFlasher { get; private set; }
+        [field: SerializeField] public TimeManipulator TimeManipulator { get; private set; }
 
         [SerializeField] AttackState[] attackPattern;
 
         int attackPatternIndex = 0;
+
+        private void OnEnable()
+        {
+            Health.onDeath += Health_OnDeath;
+        }
 
         private void Start()
         {
@@ -67,6 +79,16 @@ namespace Cat.StateMachines.Crusader
             }
 
             return nextState;
+        }
+
+        private void Health_OnDeath()
+        {
+            SwitchState(new CrusaderDeathState(this));
+        }
+
+        private void OnDisable()
+        {
+            Health.onDeath -= Health_OnDeath;
         }
     }
 }

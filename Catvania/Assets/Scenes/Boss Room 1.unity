@@ -236,14 +236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2701889705570965698, guid: 47322d262d071e54d978d12d7181808b, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
-      propertyPath: <SwordThrowWaitTime>k__BackingField
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: <LeftSwordThrowSpawnPoint>k__BackingField
       value: 
@@ -255,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 8545167892006052418, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: m_Name
       value: Crusader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545167892006052418, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8545167892006052419, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: m_RootOrder
@@ -318,10 +314,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8545167892042784670, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8885245791437522526, guid: 47322d262d071e54d978d12d7181808b, type: 3}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16675,6 +16667,18 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -5.7619514
       objectReference: {fileID: 0}
+    - target: {fileID: 301772967490447924, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806038206541802150, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_ChildCameras.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962926516085103152, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3418394645969693108, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -16687,6 +16691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 4993457578280004015, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4993457578280004020, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -16694,6 +16702,10 @@ PrefabInstance:
     - target: {fileID: 4993457578280004020, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993457578280004020, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: 4993457579199899062, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_Size.x
@@ -16766,6 +16778,10 @@ PrefabInstance:
     - target: {fileID: 4993457579199899063, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[3].Y
       value: -22572384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993457579259481575, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4993457579259481576, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_Enabled
