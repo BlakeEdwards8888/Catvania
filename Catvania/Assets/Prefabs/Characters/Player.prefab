@@ -5508,7 +5508,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: -2107304446574144727}
   <FreeMoveSpeed>k__BackingField: 4
   <DashSpeed>k__BackingField: 10
-  <JumpForce>k__BackingField: 5
+  <JumpForce>k__BackingField: 6
   <FallingGravityScale>k__BackingField: 3
   <DashGravityScale>k__BackingField: 0.5
   <Mover>k__BackingField: {fileID: 3761550992353619624}
@@ -5532,13 +5532,13 @@ MonoBehaviour:
   - attackName: AttackF
     attack:
       <Damage>k__BackingField: 10
-      <Knockback>k__BackingField: {x: 5, y: 1.5}
+      <Knockback>k__BackingField: {x: 7, y: 1.5}
       <RecoilForce>k__BackingField: {x: -2, y: 0}
       <HitstunDuration>k__BackingField: 0.2
   - attackName: AttackU
     attack:
-      <Damage>k__BackingField: 20
-      <Knockback>k__BackingField: {x: 13, y: 2.5}
+      <Damage>k__BackingField: 15
+      <Knockback>k__BackingField: {x: 10, y: 2.5}
       <RecoilForce>k__BackingField: {x: 0, y: 0}
       <HitstunDuration>k__BackingField: 0.2
   - attackName: AttackD

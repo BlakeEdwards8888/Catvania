@@ -40,7 +40,7 @@ namespace Cat.StateMachines.Crusader
 
             if(timeSinceThrown >= stateMachine.SwordThrowWaitTime)
             {
-                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine));
+                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine, stateMachine.GetTeleportationDuration()));
             }
         }
 

@@ -22,7 +22,6 @@ namespace Cat.StateMachines.Crusader
             Animator cameraAnimator = GameObject.FindGameObjectWithTag("StateDrivenCamera").GetComponent<Animator>();
 
             stateMachine.Animator.Play(DeathLoopHash);
-            stateMachine.BodyHitbox.gameObject.SetActive(false);
             stateMachine.Health.SetIsInvulnerable(true);
             stateMachine.SpriteFlasher.Flash(0.15f, 0.1f);
             stateMachine.TimeManipulator.StartManipulatingTime(0, 2f, 

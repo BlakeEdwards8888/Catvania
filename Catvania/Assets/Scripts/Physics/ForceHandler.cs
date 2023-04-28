@@ -10,6 +10,7 @@ namespace Cat.Physics
         
         private Vector2 dampingVelocity;
         Rigidbody2D rb2d;
+        float smoothTime;
 
         private void Awake()
         {
@@ -18,9 +19,9 @@ namespace Cat.Physics
 
         private void FixedUpdate()
         {
-            force = Vector2.SmoothDamp(force, Vector2.zero, ref dampingVelocity, 0.1f);
+            force = Vector2.SmoothDamp(force, Vector2.zero, ref dampingVelocity, smoothTime);
 
-            if(force.magnitude <= 0.2f)
+            if(force.magnitude <= 0.1f)
             {
                 force = Vector2.zero;
             }
@@ -28,6 +29,8 @@ namespace Cat.Physics
 
         public void AddForce(Vector2 force)
         {
+            smoothTime = force.magnitude/100;   //Set smoothTime to be 1/100th of the force magnitude so that more powerful forces take longer to return to zero
+
             Vector2 tempVelocity = rb2d.velocity;
             tempVelocity.y += force.y;
             rb2d.velocity = tempVelocity;

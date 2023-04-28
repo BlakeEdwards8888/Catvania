@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9a2fbb95f3d7b40a180ea6e36664de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   knockback: {x: 10, y: 1.5}
-  hitstunDuration: 0.2
+  hitstunDuration: 0.3
   hitEffect: {fileID: 7830223095146122724, guid: 696e535004111bd418234eab8a49d733, type: 3}
   targetFilter: Enemy
 --- !u!95 &4839079856921027927

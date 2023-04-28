@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Cat.Combat;
 using UnityEngine;
 
 namespace Cat.StateMachines.Crusader
@@ -8,6 +6,8 @@ namespace Cat.StateMachines.Crusader
     public class CrusaderFlurryState : CrusaderBaseState
     {
         readonly int FlurryHash = Animator.StringToHash("Flurry");
+
+        Attack attack;
 
         public CrusaderFlurryState(CrusaderStateMachine stateMachine) : base(stateMachine) {}
 
@@ -17,6 +17,8 @@ namespace Cat.StateMachines.Crusader
         {
             CalculcateSpawnPosition();
             FacePlayer();
+            attack = stateMachine.GetAttack("Flurry");
+            stateMachine.SwordHitbox.Setup(attack);
             stateMachine.Rb2d.bodyType = RigidbodyType2D.Kinematic;
             stateMachine.Animator.Play(TeleportInFromAboveHash);
         }
@@ -33,7 +35,7 @@ namespace Cat.StateMachines.Crusader
 
             if (anim.IsTag("Attack") && anim.normalizedTime >= 1 && teleportedIn)
             {
-                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine));
+                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine, stateMachine.GetTeleportationDuration()));
             }
         }
 

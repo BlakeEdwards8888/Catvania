@@ -236,6 +236,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1262102020356784166, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368210908422578887, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: <LeftSwordThrowSpawnPoint>k__BackingField
       value: 
@@ -244,6 +256,46 @@ PrefabInstance:
       propertyPath: <RightSwordThrowSpawnPoint>k__BackingField
       value: 
       objectReference: {fileID: 1755652871}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].attackName
+      value: DownwardStrike
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: lateAttackPattern.Array.data[0].teleportationDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: lateAttackPattern.Array.data[1].teleportationDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: lateAttackPattern.Array.data[3].teleportationDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: lateAttackPattern.Array.data[4].teleportationDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].attack.<Damage>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].attack.<Knockback>k__BackingField.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].attack.<Knockback>k__BackingField.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421512802562971842, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].attack.<HitstunDuration>k__BackingField
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545167892006052417, guid: 47322d262d071e54d978d12d7181808b, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8545167892006052418, guid: 47322d262d071e54d978d12d7181808b, type: 3}
       propertyPath: m_Name
       value: Crusader
@@ -16561,6 +16613,14 @@ PrefabInstance:
     - target: {fileID: 514839797310488750, guid: a4b3682e2852cb945b16fc97db59b840, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498524616905611858, guid: a4b3682e2852cb945b16fc97db59b840, type: 3}
+      propertyPath: <JumpForce>k__BackingField
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498524616905611858, guid: a4b3682e2852cb945b16fc97db59b840, type: 3}
+      propertyPath: <FreeMoveSpeed>k__BackingField
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3707094681928589928, guid: a4b3682e2852cb945b16fc97db59b840, type: 3}
       propertyPath: m_RootOrder

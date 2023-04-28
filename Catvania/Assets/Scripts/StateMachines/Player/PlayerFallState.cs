@@ -25,6 +25,7 @@ namespace Cat.StateMachines.Player
         {
             Move(stateMachine.FreeMoveSpeed);
             FaceMovementDirection();
+            //HandleFallSpeed();
 
             if (IsGrounded())
             {

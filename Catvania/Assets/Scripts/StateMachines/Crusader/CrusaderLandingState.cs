@@ -29,7 +29,7 @@ namespace Cat.StateMachines.Crusader
 
             if(timeSinceLanded >= stateMachine.DownwardStrikeCooldown)
             {
-                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine));
+                stateMachine.SwitchState(new CrusaderTeleportState(stateMachine, stateMachine.GetTeleportationDuration()));
             }
         }
 

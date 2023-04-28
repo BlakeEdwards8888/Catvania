@@ -4,7 +4,6 @@ using Cat.Effects;
 using Cat.Flags;
 using Cat.Movement;
 using Cat.Physics;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 

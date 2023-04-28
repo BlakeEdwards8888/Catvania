@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cat.Combat;
 using UnityEngine;
 
 namespace Cat.StateMachines.Crusader
@@ -7,6 +6,8 @@ namespace Cat.StateMachines.Crusader
     public class CrusaderDownwardStrikeState : CrusaderBaseState
     {
         readonly int DownwardStrikeHash = Animator.StringToHash("DownwardStrike-Loop");
+
+        Attack attack;
 
         public CrusaderDownwardStrikeState(CrusaderStateMachine stateMachine) : base(stateMachine) {}
 
@@ -18,6 +19,9 @@ namespace Cat.StateMachines.Crusader
 
             stateMachine.transform.position = new Vector3(playerTransform.position.x,
                 stateMachine.DownwardStrikeHeight, 0);
+
+            attack = stateMachine.GetAttack("DownwardStrike");
+            stateMachine.SwordHitbox.Setup(attack);
 
             stateMachine.Animator.Play(TeleportInFromBelowHash);
         }

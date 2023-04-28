@@ -7,14 +7,18 @@ namespace Cat.StateMachines.Crusader
     {
         readonly int TeleportOutHash = Animator.StringToHash("TeleportOut");
 
+        float duration = 0.5f;
         float timeSinceTeleported = 0;
 
-        public CrusaderTeleportState(CrusaderStateMachine stateMachine) : base(stateMachine) {}
+        public CrusaderTeleportState(CrusaderStateMachine stateMachine, float duration) : base(stateMachine) 
+        {
+            this.duration = duration;
+        }
 
         public override void Enter() 
         {
+            stateMachine.IterateAttackPattern();
             stateMachine.Animator.Play(TeleportOutHash);
-            stateMachine.BodyHitbox.gameObject.SetActive(false);
             stateMachine.BodyCollider.enabled = false;
         }
 
@@ -22,7 +26,7 @@ namespace Cat.StateMachines.Crusader
         {
             timeSinceTeleported += deltaTime;
 
-            if(timeSinceTeleported >= stateMachine.TeleportationDuration)
+            if(timeSinceTeleported >= duration)
             {
                 InitiateNestState();
             }
@@ -30,7 +34,6 @@ namespace Cat.StateMachines.Crusader
 
         public override void Exit() 
         {
-            stateMachine.BodyHitbox.gameObject.SetActive(true);
             stateMachine.BodyCollider.enabled = true;
         }
 

@@ -50,8 +50,8 @@ namespace Cat.StateMachines.Player
         {
             if (IsGrounded())
             {
+                stateMachine.ForceHandler.ResetVerticalVelocity();
                 stateMachine.ForceHandler.AddForce(0, stateMachine.JumpForce);
-
                 stateMachine.SwitchState(new PlayerJumpState(stateMachine, true));
             }
         }
