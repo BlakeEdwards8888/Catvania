@@ -11,28 +11,42 @@ namespace Cat.Saving
     {
         [SerializeField] float activationRadius;
         [SerializeField] float saveCooldown;
+        [SerializeField] GameObject instructionalDisplay;
 
         InputReader inputReader;
         Transform playerTransform;
         float timeSinceSaved = Mathf.Infinity;
+        bool canSave = true;
+
+        private void OnEnable()
+        {
+            inputReader.pauseEvent += InputReader_PauseEvent;
+        }
 
         private void Awake()
         {
-            inputReader = GetComponent<InputReader>();
-            playerTransform = GameObject.FindWithTag("Player").transform;
+            inputReader = GetComponent<InputReader>();            
+            playerTransform = GameObject.FindWithTag("Player").transform;  
         }
 
         private void Update()
         {
             timeSinceSaved += Time.deltaTime;
 
-            if(Vector2.Distance(transform.position, playerTransform.position) <= activationRadius
-                && inputReader.MovementValue.y > 0.5f
-                && timeSinceSaved >= saveCooldown)
+            if (Vector2.Distance(transform.position, playerTransform.position) <= activationRadius) 
             {
-                RestorePlayerHealth();
-                Save();
-                timeSinceSaved = 0;
+                instructionalDisplay.SetActive(true);
+
+                if(inputReader.MovementValue.y > 0.5f && timeSinceSaved >= saveCooldown)
+                {
+                    RestorePlayerHealth();
+                    Save();
+                    timeSinceSaved = 0;
+                }
+            }
+            else
+            {
+                instructionalDisplay.SetActive(false);
             }
         }
 
@@ -47,13 +61,25 @@ namespace Cat.Saving
 
         void Save()
         {
+            if (!canSave) return;
+
             FindObjectOfType<SavingSystem>().Save();
+        }
+
+        private void InputReader_PauseEvent()
+        {
+            canSave = !canSave;
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, activationRadius);
+        }
+
+        private void OnDisable()
+        {
+            inputReader.pauseEvent -= InputReader_PauseEvent;
         }
     }
 }

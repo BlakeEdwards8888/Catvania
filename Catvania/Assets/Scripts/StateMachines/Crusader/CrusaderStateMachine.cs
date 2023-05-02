@@ -1,5 +1,6 @@
 using Cat.Combat;
 using Cat.Effects;
+using Cat.Flags;
 using Cat.Movement;
 using Cat.Physics;
 using System;
@@ -59,6 +60,8 @@ namespace Cat.StateMachines.Crusader
         
         [SerializeField] float initialTeleportationDuration;
 
+        [SerializeField] GameObject bossHUD;
+
         int attackPatternIndex = 0;
         AttackCycle[] currentAttackPattern;
         Dictionary<string, Attack> attackLookup = null;
@@ -71,6 +74,13 @@ namespace Cat.StateMachines.Crusader
 
         private void Start()
         {
+            if (GetComponent<FlaggedObject>().CheckFlag())
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            bossHUD.SetActive(true);
             currentAttackPattern = earlyAttackPattern;
             SwitchState(new CrusaderTeleportState(this, initialTeleportationDuration));
         }
@@ -114,6 +124,7 @@ namespace Cat.StateMachines.Crusader
 
         private void Health_OnDeath()
         {
+            GetComponent<FlaggedObject>().SetFlag(true);
             SwitchState(new CrusaderDeathState(this));
         }
 
