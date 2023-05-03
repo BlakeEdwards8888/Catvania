@@ -1,8 +1,5 @@
 using Cat.Effects;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Cat.Flags;
 
 namespace Cat.Pickups

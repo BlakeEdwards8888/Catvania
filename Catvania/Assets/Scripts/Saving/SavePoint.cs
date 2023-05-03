@@ -1,53 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cat.Controls;
-using System;
 using Cat.Combat;
 
 namespace Cat.Saving
 {
-    public class SavePoint : MonoBehaviour
+    public class SavePoint : InteractableObject
     {
-        [SerializeField] float activationRadius;
         [SerializeField] float saveCooldown;
-        [SerializeField] GameObject instructionalDisplay;
 
-        InputReader inputReader;
-        Transform playerTransform;
         float timeSinceSaved = Mathf.Infinity;
-        bool canSave = true;
 
-        private void OnEnable()
-        {
-            inputReader.pauseEvent += InputReader_PauseEvent;
-        }
 
-        private void Awake()
+        protected override void Update()
         {
-            inputReader = GetComponent<InputReader>();            
-            playerTransform = GameObject.FindWithTag("Player").transform;  
-        }
-
-        private void Update()
-        {
+            base.Update();
             timeSinceSaved += Time.deltaTime;
+        }
 
-            if (Vector2.Distance(transform.position, playerTransform.position) <= activationRadius) 
-            {
-                instructionalDisplay.SetActive(true);
+        protected override void ExecuteAction()
+        {
+            RestorePlayerHealth();
+            Save();
 
-                if(inputReader.MovementValue.y > 0.5f && timeSinceSaved >= saveCooldown)
-                {
-                    RestorePlayerHealth();
-                    Save();
-                    timeSinceSaved = 0;
-                }
-            }
-            else
-            {
-                instructionalDisplay.SetActive(false);
-            }
+            timeSinceSaved = 0;
+        }
+
+        protected override bool IsInteractable()
+        {
+            return timeSinceSaved >= saveCooldown && base.IsInteractable();
         }
 
         private void RestorePlayerHealth()
@@ -59,27 +39,9 @@ namespace Cat.Saving
             playerHealer.RestoreAllHeals();
         }
 
-        void Save()
+        private void Save()
         {
-            if (!canSave) return;
-
             FindObjectOfType<SavingSystem>().Save();
-        }
-
-        private void InputReader_PauseEvent()
-        {
-            canSave = !canSave;
-        }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(transform.position, activationRadius);
-        }
-
-        private void OnDisable()
-        {
-            inputReader.pauseEvent -= InputReader_PauseEvent;
         }
     }
 }
