@@ -1,6 +1,7 @@
 using UnityEngine;
 using Cat.Controls;
 using Cat.Combat;
+using System;
 
 namespace Cat.Saving
 {
@@ -10,6 +11,7 @@ namespace Cat.Saving
 
         float timeSinceSaved = Mathf.Infinity;
 
+        public event Action onSaved;
 
         protected override void Update()
         {
@@ -42,6 +44,8 @@ namespace Cat.Saving
         private void Save()
         {
             FindObjectOfType<SavingSystem>().Save();
+
+            onSaved?.Invoke();
         }
     }
 }
