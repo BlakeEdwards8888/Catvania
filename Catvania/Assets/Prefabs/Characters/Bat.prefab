@@ -136,6 +136,32 @@ MonoBehaviour:
   <ForceHandler>k__BackingField: {fileID: 1526843996215259965}
   <Rb2d>k__BackingField: {fileID: 1794758748744062754}
   <DeathEffect>k__BackingField: {fileID: 832307293039467154, guid: d746d1f695e82884c91139a163ff4c1f, type: 3}
+--- !u!114 &8123047392910748810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794758748744062753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3d47138e77b9144af0c0bd6c175a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefix: ENEMY_
+  flagKey: 
+--- !u!114 &4403854003568521671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794758748744062753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7cd6fd26485144e926aed2c13dc86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1794758748744062754 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896896, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}

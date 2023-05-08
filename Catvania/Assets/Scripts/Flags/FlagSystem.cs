@@ -12,8 +12,6 @@ namespace Cat.Flags
 
         Dictionary<string, bool> flagLookup;
 
-
-
         public bool CheckFlag(string flagID)
         {
             if (flagLookup == null) BuildLookup();
@@ -41,6 +39,20 @@ namespace Cat.Flags
             if (flagLookup == null) BuildLookup();
 
             flagLookup[id] = value;
+        }
+
+        public void SetAllFlagsWithPrefix(string prefix, bool value)
+        {
+            if (flagLookup == null) BuildLookup();
+
+            Dictionary<string, bool> flagLookupCache = new Dictionary<string,bool>(flagLookup);
+
+            foreach(KeyValuePair<string, bool> kvp in flagLookupCache)
+            {
+                if (!kvp.Key.Contains(prefix)) continue;
+
+                flagLookup[kvp.Key] = value;
+            }
         }
 
         public object CaptureState()

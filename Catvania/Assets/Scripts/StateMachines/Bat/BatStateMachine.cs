@@ -1,9 +1,7 @@
 using Cat.Combat;
+using Cat.Flags;
 using Cat.Movement;
 using Cat.Physics;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Cat.StateMachines.Bat
@@ -36,6 +34,7 @@ namespace Cat.StateMachines.Bat
 
         void OnDeath()
         {
+            GetComponent<FlaggedObject>().SetFlag(true);
             Instantiate(DeathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

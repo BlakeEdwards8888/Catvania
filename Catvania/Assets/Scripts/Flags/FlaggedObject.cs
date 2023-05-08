@@ -8,6 +8,7 @@ namespace Cat.Flags
     [ExecuteAlways]
     public class FlaggedObject : MonoBehaviour
     {
+        [SerializeField] string prefix = "";
         [SerializeField] string flagKey = "";
 
         static Dictionary<string, FlaggedObject> globalLookup = new Dictionary<string, FlaggedObject>();
@@ -36,9 +37,11 @@ namespace Cat.Flags
             SerializedObject serializedObject = new SerializedObject(this);
             SerializedProperty property = serializedObject.FindProperty("flagKey");
 
-            if (string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue))
+            if (string.IsNullOrEmpty(property.stringValue) || !IsUnique(property.stringValue)
+                || !property.stringValue.Contains(prefix))
             {
-                property.stringValue = System.Guid.NewGuid().ToString();
+                property.stringValue = prefix;
+                property.stringValue += System.Guid.NewGuid().ToString();
                 serializedObject.ApplyModifiedProperties();
             }
 

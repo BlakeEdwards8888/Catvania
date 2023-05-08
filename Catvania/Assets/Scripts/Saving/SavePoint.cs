@@ -2,6 +2,7 @@ using UnityEngine;
 using Cat.Controls;
 using Cat.Combat;
 using System;
+using Cat.Flags;
 
 namespace Cat.Saving
 {
@@ -21,6 +22,7 @@ namespace Cat.Saving
 
         protected override void ExecuteAction()
         {
+            RestoreAllEnemies();
             RestorePlayerHealth();
             Save();
 
@@ -39,6 +41,13 @@ namespace Cat.Saving
 
             playerHealth.Heal(playerHealth.GetMaxHealth());
             playerHealer.RestoreAllHeals();
+        }
+
+        void RestoreAllEnemies()
+        {
+            FlagSystem flagSystem = Resources.Load<FlagSystem>("Default Flag System");
+
+            flagSystem.SetAllFlagsWithPrefix("ENEMY_", false);
         }
 
         private void Save()
