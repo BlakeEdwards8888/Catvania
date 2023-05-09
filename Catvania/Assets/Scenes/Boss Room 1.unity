@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af3d47138e77b9144af0c0bd6c175a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefix: 
   flagKey: DEFEATED_CRUSADER
 --- !u!1 &1043973749
 GameObject:
@@ -16777,13 +16778,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 3990868946971188657, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4993457578280004015, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4993457578280004020, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.820104
+      value: 8.020103
       objectReference: {fileID: 0}
     - target: {fileID: 4993457578280004020, guid: 4d0c5704aa0d98b4691f0bf7c8ddc3ef, type: 3}
       propertyPath: m_LocalPosition.y
