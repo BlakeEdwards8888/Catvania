@@ -4,6 +4,7 @@ using Cat.Effects;
 using Cat.Flags;
 using Cat.Movement;
 using Cat.Physics;
+using Cat.Saving;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,6 +55,7 @@ namespace Cat.StateMachines.Player
         {
             GetComponent<Health>().onTakeDamage += Health_OnTakeDamage;
             GetComponent<Health>().onDeath += OnDeath;
+            SavingSystem.Instance.onSceneLoaded += Start;
         }
 
         private void Start()
@@ -138,6 +140,7 @@ namespace Cat.StateMachines.Player
         {
             GetComponent<Health>().onTakeDamage -= Health_OnTakeDamage;
             GetComponent<Health>().onDeath -= OnDeath;
+            SavingSystem.Instance.onSceneLoaded -= Start;
         }
     }
 }

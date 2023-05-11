@@ -43,7 +43,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.15
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -56,6 +56,22 @@ MonoBehaviour:
   scale:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &-4264130914630358204
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
 --- !u!114 &-2298071910245748145
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -77,10 +93,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.5
   smoothness:
     m_OverrideState: 0
-    m_Value: 0.513
+    m_Value: 1
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -94,13 +110,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: Player Low Health Profile
   m_EditorClassIdentifier: 
   components:
   - {fileID: 3454639083000020268}
   - {fileID: -5509105256892395424}
   - {fileID: -2298071910245748145}
   - {fileID: -5879220005342707884}
+  - {fileID: -4264130914630358204}
 --- !u!114 &3454639083000020268
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -119,7 +136,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.2
   scatter:
     m_OverrideState: 0
     m_Value: 0.858

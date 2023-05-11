@@ -15,7 +15,9 @@ namespace Cat.UI
         {
             SavingSystem savingSystem = SavingSystem.Instance;
 
-            savingSystem.StartCoroutine(savingSystem.LoadLastScene(fileName));
+            savingSystem.SetCurrentSaveFile(fileName);
+
+            savingSystem.LoadLastScene();
         }
 
         public string GetFileName()

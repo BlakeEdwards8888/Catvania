@@ -14,6 +14,12 @@ namespace Cat.Saving
 
         public event Action onSaved;
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            SavingSystem.Instance.onSceneLoaded += SavingSystem_OnSceneLoaded;
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -55,6 +61,18 @@ namespace Cat.Saving
             FindObjectOfType<SavingSystem>().Save();
 
             onSaved?.Invoke();
+        }
+
+        void SavingSystem_OnSceneLoaded()
+        {
+            RestorePlayerHealth();
+            RestoreAllEnemies();
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            SavingSystem.Instance.onSceneLoaded -= SavingSystem_OnSceneLoaded;
         }
     }
 }

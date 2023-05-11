@@ -69,6 +69,11 @@ namespace Cat.Combat
             return isInvulnerable;
         }
 
+        public bool IsDead()
+        {
+            return currentHealth == 0;
+        }
+
         public object CaptureState()
         {
             return maxHealth;

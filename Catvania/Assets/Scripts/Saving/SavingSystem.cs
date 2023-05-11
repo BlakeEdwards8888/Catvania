@@ -1,5 +1,5 @@
 using Cat.Flags;
-using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +18,8 @@ namespace Cat.Saving
         Transform playerTransform;
         string currentSaveFile;
 
+        public event Action onSceneLoaded;
+
         private void Awake()
         {
             if(Instance == null)
@@ -31,10 +33,13 @@ namespace Cat.Saving
             }
         }
 
-        public IEnumerator LoadLastScene(string saveFile)
+        public void LoadLastScene()
         {
-            currentSaveFile = saveFile;
+            StartCoroutine(LoadLastSceneCoroutine(currentSaveFile));
+        }
 
+        public IEnumerator LoadLastSceneCoroutine(string saveFile)
+        {
             Dictionary<string, object> state = LoadFile(saveFile);
 
             int buildIndex = DEFAULT_LAST_SCENE;
@@ -54,6 +59,8 @@ namespace Cat.Saving
             }
 
             RestoreState(state);
+
+            onSceneLoaded?.Invoke();
         }
 
         public void Save()
@@ -117,6 +124,11 @@ namespace Cat.Saving
         private string GetPathFromSaveFile(string saveFile)
         {
             return Path.Combine(Application.persistentDataPath, saveFile + ".sav");
+        }
+
+        public void SetCurrentSaveFile(string saveFile)
+        {
+            currentSaveFile = saveFile;
         }
     }
 }
