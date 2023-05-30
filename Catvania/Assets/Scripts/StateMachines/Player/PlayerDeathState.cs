@@ -13,6 +13,7 @@ namespace Cat.StateMachines.Player
         public override void Enter() 
         {
             stateMachine.Animator.Play(DeathHash);
+            stateMachine.PlaySound("Death");
         }
 
         public override void Tick(float deltaTime)

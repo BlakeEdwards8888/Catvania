@@ -1,3 +1,4 @@
+using Cat.Audio;
 using Cat.Combat;
 using Cat.Controls;
 using Cat.Effects;
@@ -17,6 +18,13 @@ namespace Cat.StateMachines.Player
         {
             public string attackName;
             public Attack attack;
+        }
+
+        [System.Serializable]
+        public struct SoundMapping
+        {
+            public string soundName;
+            public AudioClip sound;
         }
 
         [field: SerializeField] public Animator Animator { get; private set; }
@@ -39,12 +47,15 @@ namespace Cat.StateMachines.Player
         [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
         [field: SerializeField] public Healer Healer { get; private set; }
         [field: SerializeField] public TimeManipulator TimeManipulator { get; private set; }
+        [field: SerializeField] public SoundEmitter SoundEmitter { get; private set; }
+        [field: SerializeField] public SoundMapping[] Sounds { get; private set; }
 
         [SerializeField] float invulnerabilityDuration = 1;
         [SerializeField] float hitTimeScale = 0.2f;
         [SerializeField] float hitTimeManipulationDuration = 0.2f;
 
         Dictionary<string, Attack> attackLookup = null;
+        Dictionary<string, AudioClip> soundLookup = null;
 
         bool canDoubleJump;
         bool canUpstrike;
@@ -88,6 +99,28 @@ namespace Cat.StateMachines.Player
             foreach(AttackMapping attack in Attacks)
             {
                 attackLookup.Add(attack.attackName, attack.attack);
+            }
+        }
+
+        public void PlaySound(string soundName)
+        {
+            SoundEmitter.PlaySound(GetSound(soundName));
+        }
+
+        public AudioClip GetSound(string soundName)
+        {
+            if (soundLookup == null) BuildSoundLookup();
+
+            return soundLookup[soundName];
+        }
+
+        private void BuildSoundLookup()
+        {
+            soundLookup = new Dictionary<string, AudioClip>();
+
+            foreach (SoundMapping sound in Sounds)
+            {
+                soundLookup.Add(sound.soundName, sound.sound);
             }
         }
 

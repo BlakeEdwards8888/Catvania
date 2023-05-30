@@ -24,6 +24,7 @@ namespace Cat.StateMachines.Player
             stateMachine.InputReader.healEvent += OnHeal;
 
             stateMachine.Animator.Play(JumpHash);
+            stateMachine.PlaySound("Jump");
         }
 
         public override void Tick(float deltaTime)

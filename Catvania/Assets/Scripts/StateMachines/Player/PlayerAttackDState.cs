@@ -23,6 +23,7 @@ namespace Cat.StateMachines.Player
 
             stateMachine.Hitbox.Setup(attack);
             stateMachine.Animator.Play(AttackHash);
+            stateMachine.PlaySound("Attack");
         }
 
         public override void Tick(float deltaTime)

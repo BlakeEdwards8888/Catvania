@@ -20,6 +20,7 @@ namespace Cat.StateMachines.Player
         {
             stateMachine.Animator.Play(HitstunHash);
             stateMachine.Health.SetIsInvulnerable(true);
+            stateMachine.PlaySound("Hurt");
         }
 
         public override void Tick(float deltaTime)
