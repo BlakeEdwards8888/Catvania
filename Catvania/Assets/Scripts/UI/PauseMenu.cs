@@ -23,6 +23,7 @@ namespace Cat.UI
         private void InputReader_PauseEvent()
         {
             if (playerHealth.IsDead()) return;
+            if (Time.timeScale < 1 && !uiToggler.GetToggleState()) return;
 
             uiToggler.ToggleUI();
         }

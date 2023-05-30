@@ -12,5 +12,10 @@ namespace Cat.UI
         {
             uiPanel.SetActive(!uiPanel.activeInHierarchy);
         }
+
+        public bool GetToggleState()
+        {
+            return uiPanel.activeInHierarchy;
+        }
     }
 }
