@@ -8,6 +8,10 @@ namespace Cat.StateMachines.Skelecat
     {
         readonly int AttackHash = Animator.StringToHash("Attack");
 
+        float attackSoundDelay = 0.42f;
+        float timeSinceEntered = 0;
+        bool playedSound;
+
         public SkelecatAttackState(SkelecatStateMachine stateMachine) : base(stateMachine)
         {
         }
@@ -22,6 +26,16 @@ namespace Cat.StateMachines.Skelecat
             HandleFallSpeed();
 
             Move(0, Vector2.zero);
+
+            if(timeSinceEntered >= attackSoundDelay && !playedSound)
+            {
+                stateMachine.PlaySound("Attack");
+                playedSound = true;
+            }
+            else
+            {
+                timeSinceEntered += deltaTime;
+            }
 
             AnimatorStateInfo anim = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
 

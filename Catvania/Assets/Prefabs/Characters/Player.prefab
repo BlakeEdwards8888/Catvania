@@ -5296,6 +5296,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: d88cd7e37eb78bb408b377f0fe36efca, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: df5c2c1981038f64d9f7430bd041d173, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[2].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: b78eee2b904ac404e9ef34d93377a05c, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[3].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 19946b631cc4ddb4784cd0f40bcb1312, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].soundName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].soundName
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[2].soundName
+      value: Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[3].soundName
+      value: Jump
+      objectReference: {fileID: 0}
     - target: {fileID: 3714945715782814872, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: health
       value: 100
@@ -5583,15 +5619,7 @@ MonoBehaviour:
   <Healer>k__BackingField: {fileID: 869837061}
   <TimeManipulator>k__BackingField: {fileID: 4497620833597792766}
   <SoundEmitter>k__BackingField: {fileID: 1475896487018039421}
-  <Sounds>k__BackingField:
-  - soundName: Attack
-    sound: {fileID: 8300000, guid: d88cd7e37eb78bb408b377f0fe36efca, type: 3}
-  - soundName: Death
-    sound: {fileID: 8300000, guid: df5c2c1981038f64d9f7430bd041d173, type: 3}
-  - soundName: Hurt
-    sound: {fileID: 8300000, guid: b78eee2b904ac404e9ef34d93377a05c, type: 3}
-  - soundName: Jump
-    sound: {fileID: 8300000, guid: 19946b631cc4ddb4784cd0f40bcb1312, type: 3}
+  <SFXHandler>k__BackingField: {fileID: 7194684100770536106}
   invulnerabilityDuration: 0.5
   hitTimeScale: 0.2
   hitTimeManipulationDuration: 0.2
@@ -5670,6 +5698,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44674af7ae03f9f48bfa1564fce51a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7194684100770536106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 8864501020778423214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3761550992353619629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4018992ca3f4fb54ca3211182cc85f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9109220739943304895

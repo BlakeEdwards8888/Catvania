@@ -1,3 +1,4 @@
+using Cat.Audio;
 using Cat.Combat;
 using Cat.Flags;
 using Cat.Movement;
@@ -21,6 +22,8 @@ namespace Cat.StateMachines.Skelecat
         [field: SerializeField] public float AttackRate { get; private set; }
         [field: SerializeField] public float AggroRange { get; private set; }
         [field: SerializeField] public GameObject DeathEffect { get; private set; }
+        [field: SerializeField] public SoundEmitter SoundEmitter { get; private set; }
+        [field: SerializeField] public SFXHandler SFXHandler { get; private set; }
 
         private void OnEnable()
         {
@@ -32,10 +35,16 @@ namespace Cat.StateMachines.Skelecat
             SwitchState(new SkelecatPatrolState(this));
         }
 
+        public void PlaySound(string soundName)
+        {
+            SoundEmitter.PlaySound(SFXHandler.GetSound(soundName));
+        }
+
         void OnDeath()
         {
             GetComponent<FlaggedObject>().SetFlag(true);
             Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            PlaySound("Death");
             Destroy(gameObject);
         }
 
