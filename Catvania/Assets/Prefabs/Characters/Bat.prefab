@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: c444994ec172fa647951ef13569aa327, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: c67f5ba72182567449f5456b40afd659, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].soundName
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].soundName
+      value: Hurt
+      objectReference: {fileID: 0}
     - target: {fileID: 3714945715782814872, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: maxHealth
       value: 30
@@ -136,6 +156,20 @@ MonoBehaviour:
   <ForceHandler>k__BackingField: {fileID: 1526843996215259965}
   <Rb2d>k__BackingField: {fileID: 1794758748744062754}
   <DeathEffect>k__BackingField: {fileID: 832307293039467154, guid: d746d1f695e82884c91139a163ff4c1f, type: 3}
+  <SoundEmitter>k__BackingField: {fileID: 4080407673711784433}
+  <SFXHandler>k__BackingField: {fileID: 5693484728934425382}
+--- !u!114 &4403854003568521671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794758748744062753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7cd6fd26485144e926aed2c13dc86f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8123047392910748810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,18 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefix: ENEMY_
   flagKey: 
---- !u!114 &4403854003568521671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794758748744062753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7cd6fd26485144e926aed2c13dc86f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1794758748744062754 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5707958506310896896, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -188,6 +210,28 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5707958506339184862, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_PrefabInstance: {fileID: 6331776948246583842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4080407673711784433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8033991548609817555, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 6331776948246583842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794758748744062753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad91f79b2a5cf6459d8fd0b83aeff18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5693484728934425382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 6331776948246583842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794758748744062753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4018992ca3f4fb54ca3211182cc85f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6796014513021670291
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ namespace Cat.StateMachines.Stone
         public override void Enter()
         {
             stateMachine.Animator.Play(HitstunHash);
+            stateMachine.PlaySound("Hurt");
         }
 
         public override void Tick(float deltaTime)

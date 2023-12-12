@@ -24,6 +24,8 @@ namespace Cat.StateMachines.Crusader
             stateMachine.SwordHitbox.Setup(attack);
 
             stateMachine.Animator.Play(TeleportInFromBelowHash);
+
+            stateMachine.PlaySound("Downstrike");
         }
 
         public override void Tick(float deltaTime)

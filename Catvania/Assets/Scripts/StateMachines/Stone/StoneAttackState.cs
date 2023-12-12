@@ -8,6 +8,10 @@ namespace Cat.StateMachines.Stone
     {
         readonly int AttackHash = Animator.StringToHash("Attack");
 
+        float attackSoundDelay = 0.67f;
+        float timeSinceEntered = 0;
+        bool playedSound;
+
         public StoneAttackState(StoneStateMachine stateMachine) : base(stateMachine){}
 
         public override void Enter()
@@ -20,6 +24,16 @@ namespace Cat.StateMachines.Stone
             HandleFallSpeed();
 
             Move(0, Vector2.zero);
+
+            if (timeSinceEntered >= attackSoundDelay && !playedSound)
+            {
+                stateMachine.PlaySound("Attack");
+                playedSound = true;
+            }
+            else
+            {
+                timeSinceEntered += deltaTime;
+            }
 
             AnimatorStateInfo anim = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
 

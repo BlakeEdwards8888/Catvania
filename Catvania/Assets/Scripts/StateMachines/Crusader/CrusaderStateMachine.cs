@@ -1,3 +1,4 @@
+using Cat.Audio;
 using Cat.Combat;
 using Cat.Effects;
 using Cat.Flags;
@@ -52,6 +53,8 @@ namespace Cat.StateMachines.Crusader
         [field: SerializeField] public TimeManipulator TimeManipulator { get; private set; }
         [field: SerializeField] public Hitbox SwordHitbox { get; private set; }
         [field: SerializeField] public AttackMapping[] Attacks { get; private set; }
+        [field: SerializeField] public SoundEmitter SoundEmitter { get; private set; }
+        [field: SerializeField] public SFXHandler SFXHandler { get; private set; }
 
         [Range(0,100)]
         [SerializeField] float attackPhaseSwitchHealthThresholdPercentage = 75;
@@ -83,6 +86,11 @@ namespace Cat.StateMachines.Crusader
             bossHUD.SetActive(true);
             currentAttackPattern = earlyAttackPattern;
             SwitchState(new CrusaderTeleportState(this, initialTeleportationDuration));
+        }
+
+        public void PlaySound(string soundName)
+        {
+            SoundEmitter.PlaySound(SFXHandler.GetSound(soundName));
         }
 
         public CrusaderBaseState GetNextAttackState()
@@ -130,6 +138,8 @@ namespace Cat.StateMachines.Crusader
 
         private void Health_OnTakeDamage(float hitstunDuration)
         {
+            PlaySound("Hurt");
+
             if(Health.GetCurrentHealth() <= CalculatePhaseSwitchHealthThreshold() &&
                 currentAttackPattern == earlyAttackPattern)
             {

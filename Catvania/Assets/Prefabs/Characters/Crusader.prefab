@@ -38,6 +38,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: c67f5ba72182567449f5456b40afd659, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b6e9a4fee029324788041209df44198, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[2].sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a1fa47a00a8ff0409f5a9532d98c66b, type: 3}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[0].soundName
+      value: Hurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[1].soundName
+      value: Downstrike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: sfx.Array.data[2].soundName
+      value: Death
+      objectReference: {fileID: 0}
     - target: {fileID: 3714945715782814872, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: maxHealth
       value: 200
@@ -136,6 +164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44674af7ae03f9f48bfa1564fce51a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2413253530582079045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1791781346864134404, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4018992ca3f4fb54ca3211182cc85f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3051872801772295667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1439560665657047730, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -145,6 +184,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53941a3f6702de349ae6b33f159f3363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6259526671069365394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8033991548609817555, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 4152379228983963457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545167892006052418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad91f79b2a5cf6459d8fd0b83aeff18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &8545167892006052417 stripped
@@ -263,7 +313,9 @@ MonoBehaviour:
       <Knockback>k__BackingField: {x: 10, y: 1.5}
       <RecoilForce>k__BackingField: {x: 0, y: 0}
       <HitstunDuration>k__BackingField: 0.2
-  attackPhaseSwitchHealthThresholdPercentage: 80
+  <SoundEmitter>k__BackingField: {fileID: 6259526671069365394}
+  <SFXHandler>k__BackingField: {fileID: 2413253530582079045}
+  attackPhaseSwitchHealthThresholdPercentage: 90
   earlyAttackPattern:
   - attackState: 0
     teleportationDuration: 1
@@ -279,14 +331,15 @@ MonoBehaviour:
   - attackState: 1
     teleportationDuration: 0.1
   - attackState: 2
-    teleportationDuration: 1
-  - attackState: 0
-    teleportationDuration: 0.5
+    teleportationDuration: 1.2
+  - attackState: 2
+    teleportationDuration: 1.2
   - attackState: 0
     teleportationDuration: 0.5
   - attackState: 0
     teleportationDuration: 0.5
   initialTeleportationDuration: 1
+  bossHUD: {fileID: 0}
 --- !u!4 &8545167892006052419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707958506310896898, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}

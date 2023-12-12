@@ -24,9 +24,10 @@ namespace Cat.StateMachines.Crusader
             stateMachine.Animator.Play(DeathLoopHash);
             stateMachine.Health.SetIsInvulnerable(true);
             stateMachine.SpriteFlasher.Flash(0.15f, 0.1f);
+            stateMachine.PlaySound("Death");
             stateMachine.TimeManipulator.StartManipulatingTime(0, 2f, 
                 () => { cameraAnimator.Play("MainState"); });
-           
+
             cameraAnimator.Play("BossDeathState");
         }
 
