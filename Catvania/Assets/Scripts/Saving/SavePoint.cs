@@ -11,6 +11,7 @@ namespace Cat.Saving
         [SerializeField] float saveCooldown;
 
         float timeSinceSaved = Mathf.Infinity;
+        AudioSource audioSource;
 
         public event Action onSaved;
 
@@ -18,6 +19,12 @@ namespace Cat.Saving
         {
             base.OnEnable();
             SavingSystem.Instance.onSceneLoaded += SavingSystem_OnSceneLoaded;
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            audioSource = GetComponent<AudioSource>();
         }
 
         protected override void Update()
@@ -59,6 +66,7 @@ namespace Cat.Saving
         private void Save()
         {
             FindObjectOfType<SavingSystem>().Save();
+            audioSource.Play();
 
             onSaved?.Invoke();
         }
