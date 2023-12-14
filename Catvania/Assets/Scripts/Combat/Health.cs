@@ -26,6 +26,8 @@ namespace Cat.Combat
 
         public void TakeDamage(int damage, float hitstunDuration)
         {
+            if (IsDead()) return;
+
             currentHealth = Mathf.Max(0, currentHealth - damage);
 
             if(currentHealth == 0)

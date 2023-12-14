@@ -1,3 +1,4 @@
+using Cat.Combat;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +43,8 @@ namespace Cat.StateMachines.Skelecat
 
             Vector2 directionToPlayer = (stateMachine.transform.position - playerTransform.position).normalized;
 
-            if(Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange)
+            if(Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange
+                && !playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new SkelecatChaseState(stateMachine));
             }

@@ -1,3 +1,4 @@
+using Cat.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,8 @@ namespace Cat.StateMachines.Stone
 
             Move(stateMachine.WalkSpeed, movingDirection);
 
-            if (Vector2.Distance(stateMachine.transform.position, playerTransform.position) > stateMachine.AggroRange)
+            if (Vector2.Distance(stateMachine.transform.position, playerTransform.position) > stateMachine.AggroRange
+                || playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new StonePatrolState(stateMachine));
             }

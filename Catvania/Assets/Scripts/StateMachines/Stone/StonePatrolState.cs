@@ -1,3 +1,4 @@
+using Cat.Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,7 +41,8 @@ namespace Cat.StateMachines.Stone
 
             Vector2 directionToPlayer = (stateMachine.transform.position - playerTransform.position).normalized;
 
-            if (Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange)
+            if (Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange
+                && !playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new StoneChaseState(stateMachine));
             }
