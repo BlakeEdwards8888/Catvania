@@ -12,10 +12,9 @@ namespace Cat.StateMachines.Stone
         readonly int WalkHash = Animator.StringToHash("Walk");
 
         Vector2 movingDirection;
-
         private Vector3 originPositionOffset = new Vector3(0.5f, 0, 0);
-
         Transform playerTransform;
+        Vector2 aggroRange;
 
         public StonePatrolState(StoneStateMachine stateMachine) : base(stateMachine){}
 
@@ -25,6 +24,7 @@ namespace Cat.StateMachines.Stone
             stateMachine.Health.onTakeDamage += EnterHitstun;
             movingDirection = new Vector2(stateMachine.transform.localScale.x, 0);
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            aggroRange = new Vector2(stateMachine.HorizontalAggroRange, stateMachine.VerticalAggroRange);
         }
 
         public override void Tick(float deltaTime)
@@ -32,19 +32,23 @@ namespace Cat.StateMachines.Stone
             HandleFallSpeed();
 
             Move(stateMachine.WalkSpeed, movingDirection);
-            FaceMovementDirection();
+            FaceDirection(movingDirection);
 
             if (CollidedWithGroundInFront() || !IsGroundInFront())
             {
                 Flip();
             }
 
-            Vector2 directionToPlayer = (stateMachine.transform.position - playerTransform.position).normalized;
+            
+            if (playerTransform.GetComponent<Health>().IsDead()) return;
 
-            if (Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange
-                && !playerTransform.GetComponent<Health>().IsDead())
+            if (IsPlayerInRange(playerTransform.position, aggroRange))
             {
                 stateMachine.SwitchState(new StoneChaseState(stateMachine));
+            }
+            else if (IsPlayerInRange(playerTransform.position, stateMachine.ShootingRange))
+            {
+                stateMachine.SwitchState(new StoneShootState(stateMachine));
             }
         }
 
@@ -71,9 +75,9 @@ namespace Cat.StateMachines.Stone
             movingDirection *= -1;
         }
 
-        void FaceMovementDirection()
-        {
-            stateMachine.transform.localScale = new Vector3(movingDirection.x, 1, 1);
-        }
+        //void FaceMovementDirection()
+        //{
+        //    stateMachine.transform.localScale = new Vector3(movingDirection.x, 1, 1);
+        //}
     }
 }

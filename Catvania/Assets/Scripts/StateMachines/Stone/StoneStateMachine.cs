@@ -17,9 +17,12 @@ namespace Cat.StateMachines.Stone
         [field: SerializeField] public ForceHandler ForceHandler { get; private set; }
         [field: SerializeField] public float WalkSpeed { get; private set; }
         [field: SerializeField] public ContactFilter2D GroundFilter { get; private set; }
-        [field: SerializeField] public float AggroRange { get; private set; }
+        [field: SerializeField] public float HorizontalAggroRange { get; private set; }
+        [field: SerializeField] public float VerticalAggroRange { get; private set; }
+        [field: SerializeField] public float ShootingRange { get; private set; }
         [field: SerializeField] public float AttackRange { get; private set; }
         [field: SerializeField] public float AttackCooldown { get; private set; }
+        [field: SerializeField] public float ShootCooldown { get; private set; }
         [field: SerializeField] public GameObject DeathEffect { get; private set; }
         [field: SerializeField] public SoundEmitter SoundEmitter { get; private set; }
         [field: SerializeField] public SFXHandler SFXHandler { get; private set; }

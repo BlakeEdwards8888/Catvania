@@ -39,7 +39,7 @@ namespace Cat.StateMachines.Stone
 
             if (anim.IsTag("Attack") && anim.normalizedTime >= 1)
             {
-                stateMachine.SwitchState(new StoneIdleState(stateMachine));
+                stateMachine.SwitchState(new StoneIdleState(stateMachine, stateMachine.AttackCooldown));
             }
         }
 

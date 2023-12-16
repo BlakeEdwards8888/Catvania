@@ -20,4 +20,4 @@ MonoBehaviour:
   - id: HAS_UPSTRIKE
     value: 0
   - id: HAS_SWORD_THROW
-    value: 0
+    value: 1

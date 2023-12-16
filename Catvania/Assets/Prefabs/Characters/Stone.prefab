@@ -58,6 +58,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5364245, y: 0.97938156}
   m_EdgeRadius: 0
+--- !u!1 &4996315450026358952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103664134584423223}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &103664134584423223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996315450026358952}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.025, y: 0.448, z: 0.052131016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2377813877612860989}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &783505268879272304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 5707958506310896899, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5707958506310896903, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
       propertyPath: m_Size.x
       value: 0.45386994
@@ -385,6 +420,26 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5707958506339184862, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
   m_PrefabInstance: {fileID: 8054986018880743141}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2377813877612860988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707958506339184857, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
+  m_PrefabInstance: {fileID: 8054986018880743141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626277776993908178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377813877612860988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938caef184aab7e44bdd03448f1777fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1220466487761846209, guid: 1e6762b5274ec7e4a8ba9a5630929548, type: 3}
+  firePoint: {fileID: 103664134584423223}
+  force: {x: 5, y: 7}
 --- !u!4 &2377813877612860989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707958506339184856, guid: 2f4affd82b1799c4f9da2e0e6e91fa46, type: 3}
@@ -423,6 +478,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7cd6fd26485144e926aed2c13dc86f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &860774351593625859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377813877649533926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938caef184aab7e44bdd03448f1777fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1220466487761846209, guid: 1e6762b5274ec7e4a8ba9a5630929548, type: 3}
+  firePoint: {fileID: 103664134584423223}
+  force: {x: 7, y: 10}
 --- !u!114 &3671622303954839139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,9 +540,12 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  <AggroRange>k__BackingField: 5
+  <HorizontalAggroRange>k__BackingField: 3
+  <VerticalAggroRange>k__BackingField: 1
+  <ShootingRange>k__BackingField: 5
   <AttackRange>k__BackingField: 1
   <AttackCooldown>k__BackingField: 3
+  <ShootCooldown>k__BackingField: 1
   <DeathEffect>k__BackingField: {fileID: 832307293039467154, guid: d746d1f695e82884c91139a163ff4c1f, type: 3}
   <SoundEmitter>k__BackingField: {fileID: 51641467961019702}
   <SFXHandler>k__BackingField: {fileID: 8580659932802457569}

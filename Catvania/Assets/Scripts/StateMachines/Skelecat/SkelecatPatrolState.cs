@@ -43,12 +43,13 @@ namespace Cat.StateMachines.Skelecat
 
             Vector2 directionToPlayer = (stateMachine.transform.position - playerTransform.position).normalized;
 
-            if(Vector2.Distance(stateMachine.transform.position + originPositionOffset, playerTransform.position) <= stateMachine.AggroRange
-                && !playerTransform.GetComponent<Health>().IsDead())
+            if(IsPlayerInRange(playerTransform.position) && !playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new SkelecatChaseState(stateMachine));
             }
         }
+
+
 
         public override void Exit()
         {

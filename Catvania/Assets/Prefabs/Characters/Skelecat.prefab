@@ -427,7 +427,8 @@ MonoBehaviour:
   <Health>k__BackingField: {fileID: 5798895273211197589}
   <AttackRange>k__BackingField: 0.8
   <AttackRate>k__BackingField: 1
-  <AggroRange>k__BackingField: 5
+  <HorizontalAggroRange>k__BackingField: 5
+  <VerticalAggroRange>k__BackingField: 1
   <DeathEffect>k__BackingField: {fileID: 832307293039467154, guid: d746d1f695e82884c91139a163ff4c1f, type: 3}
   <SoundEmitter>k__BackingField: {fileID: 903406356835934174}
   <SFXHandler>k__BackingField: {fileID: 8875007516827192585}

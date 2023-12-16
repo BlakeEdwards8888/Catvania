@@ -51,5 +51,20 @@ namespace Cat.StateMachines.Skelecat
         {
             stateMachine.SwitchState(new SkelecatHitstunState(stateMachine, duration));
         }
+
+        protected bool IsPlayerInRange(Vector3 playerPosition)
+        {
+            Transform transform = stateMachine.transform;
+
+            float minX = transform.position.x - stateMachine.HorizontalAggroRange;
+            float maxX = transform.position.x + stateMachine.HorizontalAggroRange;
+            float minY = transform.position.y - stateMachine.VerticalAggroRange;
+            float maxY = transform.position.y + stateMachine.VerticalAggroRange;
+
+            bool isXInRange = playerPosition.x > minX && playerPosition.x < maxX;
+            bool isYInRange = playerPosition.y > minY && playerPosition.y < maxY;
+
+            return isXInRange && isYInRange;
+        }
     }
 }

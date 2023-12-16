@@ -9,8 +9,12 @@ namespace Cat.StateMachines.Stone
         readonly int IdleHash = Animator.StringToHash("Idle");
 
         float timeSinceIdle = 0;
+        float duration;
 
-        public StoneIdleState(StoneStateMachine stateMachine) : base(stateMachine) {}
+        public StoneIdleState(StoneStateMachine stateMachine, float duration) : base(stateMachine) 
+        {
+            this.duration = duration;
+        }
 
         public override void Enter()
         {
@@ -25,7 +29,7 @@ namespace Cat.StateMachines.Stone
 
             timeSinceIdle += deltaTime;
 
-            if (timeSinceIdle >= stateMachine.AttackCooldown)
+            if (timeSinceIdle >= duration)
             {
                 stateMachine.SwitchState(new StonePatrolState(stateMachine));
             }

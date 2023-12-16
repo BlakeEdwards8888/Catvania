@@ -33,8 +33,7 @@ namespace Cat.StateMachines.Skelecat
 
             Move(stateMachine.RunSpeed, movingDirection);
 
-            if (Vector2.Distance(stateMachine.transform.position, playerTransform.position) > stateMachine.AggroRange
-                || playerTransform.GetComponent<Health>().IsDead())
+            if (!IsPlayerInRange(playerTransform.position) || playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new SkelecatPatrolState(stateMachine));
             }

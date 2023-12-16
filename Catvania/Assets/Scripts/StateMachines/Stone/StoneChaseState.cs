@@ -11,6 +11,7 @@ namespace Cat.StateMachines.Stone
 
         Vector2 movingDirection;
         Transform playerTransform;
+        Vector2 aggroRange;
 
         public StoneChaseState(StoneStateMachine stateMachine) : base(stateMachine) {}
 
@@ -19,19 +20,19 @@ namespace Cat.StateMachines.Stone
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             stateMachine.Animator.Play(WalkHash);
             stateMachine.Health.onTakeDamage += EnterHitstun;
+            aggroRange = new Vector2(stateMachine.HorizontalAggroRange, stateMachine.VerticalAggroRange);
         }
 
         public override void Tick(float deltaTime)
         {
             HandleFallSpeed();
 
-            CalculateMovingDirection();
-            FaceMovementDirection();
+            movingDirection = CalculateDirectionToPlayer(playerTransform.position);
+            FaceDirection(movingDirection);
 
             Move(stateMachine.WalkSpeed, movingDirection);
 
-            if (Vector2.Distance(stateMachine.transform.position, playerTransform.position) > stateMachine.AggroRange
-                || playerTransform.GetComponent<Health>().IsDead())
+            if (!IsPlayerInRange(playerTransform.position, aggroRange) || playerTransform.GetComponent<Health>().IsDead())
             {
                 stateMachine.SwitchState(new StonePatrolState(stateMachine));
             }
@@ -45,18 +46,6 @@ namespace Cat.StateMachines.Stone
         public override void Exit()
         {
             stateMachine.Health.onTakeDamage -= EnterHitstun;
-        }
-
-        private void CalculateMovingDirection()
-        {
-            float movingX = playerTransform.position.x > stateMachine.transform.position.x ? 1 : -1;
-
-            movingDirection = new Vector2(movingX, 0);
-        }
-
-        void FaceMovementDirection()
-        {
-            stateMachine.transform.localScale = new Vector3(movingDirection.x, 1, 1);
         }
     }
 }
