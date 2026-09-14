@@ -665,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.y
@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -82.2476
+      value: -92
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1627,7 +1627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1667,7 +1667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -58.247597
+      value: -52
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1958,7 +1958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1998,7 +1998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34.247597
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2462754501436476746, guid: 0f2afa2bf44d16041a565cc5745f8180, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2090,6 +2090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -2106,6 +2107,7 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &4509456727873975341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2196,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
